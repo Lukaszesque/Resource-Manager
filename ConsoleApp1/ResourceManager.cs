@@ -13,7 +13,6 @@ namespace ConsoleApp1
         public float UpgradeRequiredAmount { get; set; }
         public float UpgradeCounter { get; set; } 
         public float Modifier { get; set;}   
-        public static List<string> ?ResourcesList = new List<string>{ };
         public void ShowResources()
         {
             Console.WriteLine($"You now have {ResourceCounter} of {ResourceName}!");
@@ -49,9 +48,13 @@ namespace ConsoleApp1
             ResourceCounter = 100;
             UpgradeRequiredAmount = 50;
             Modifier = 1;
-            ResourcesList.Add(resourceName);
 
             Console.WriteLine($"New resource of {resourceName} created");
         }
     }
+
+    class Storage 
+        { 
+           public List<ResourceManager> ResourcesList = new List<ResourceManager> { }; 
+        }
 }

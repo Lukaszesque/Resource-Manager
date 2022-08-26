@@ -41,7 +41,7 @@ namespace ConsoleApp1
                 Console.WriteLine($"{ResourceName} upgraded! Next level will cost {UpgradeCounter} of {ResourceName}");
             }
 
-
+        public static string storeKey() => Console.ReadKey().Key.ToString().ToLower();
         public ResourceManager(string resourceName)
         {
             ResourceName = resourceName;
@@ -49,12 +49,9 @@ namespace ConsoleApp1
             UpgradeRequiredAmount = 50;
             Modifier = 1;
 
-            Console.WriteLine($"New resource of {resourceName} created");
+            Console.WriteLine($"\nNew resource of {resourceName} created");
         }
     }
 
-    class Storage 
-        { 
-           public List<ResourceManager> ResourcesList = new List<ResourceManager> { }; 
-        }
+
 }

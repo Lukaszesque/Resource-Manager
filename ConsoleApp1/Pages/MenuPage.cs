@@ -32,6 +32,10 @@ namespace ConsoleApp1.Pages
                     Console.WriteLine("Not yet implemented :D");
                     break;
 
+                default:
+                    Constants.Extension_Methods.InputUnrecongnisedMessage();
+                    Menu();
+                    break;
 
             }
         }

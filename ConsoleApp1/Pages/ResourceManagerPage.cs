@@ -11,6 +11,8 @@ namespace ConsoleApp1.Pages
     {
         public static void ResourceManager()
         {
+            Console.WriteLine($"");
+            Console.WriteLine("---------------------------------------------------------");
             Console.WriteLine($"You currently have {Storage.programStorage.ResourcesList.Count} Types of resources");
 
             if (Storage.programStorage.ResourcesList.Count > 0)
@@ -56,6 +58,12 @@ namespace ConsoleApp1.Pages
                         Console.WriteLine("That is not a valid option. You will not live to see tomorrow.\n");
                         Task.Delay(50);
                     }
+                    break;
+
+
+                default:
+                    Console.WriteLine("Input not recognised...");
+                    ResourceManager();
                     break;
 
             }

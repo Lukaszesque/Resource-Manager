@@ -14,6 +14,7 @@ namespace ConsoleApp1.Pages
             Console.WriteLine("You are at the main Menu");
             Console.WriteLine("Press 'r' to see the status of your resources");
             Console.WriteLine("Press 'c' to create your resources");
+            Console.WriteLine("Press 'a' to add to your resources");
             Console.WriteLine("Press 'u' to upgrade your resources");
 
             var key = ResourceManager.storeKey();
@@ -26,6 +27,11 @@ namespace ConsoleApp1.Pages
 
                 case "c":
                     ResourceManagerPage.ResourceManager();
+                    break;
+
+                case "a":
+                    //Select which resource you would like to upgrade...
+                    //Storage.ResourcesList[0].GetResources();
                     break;
 
                 case "u":

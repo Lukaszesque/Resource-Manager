@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp1.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,10 +18,28 @@ namespace ConsoleApp1
         {
             Console.WriteLine($"You now have {ResourceCounter} of {ResourceName}!");
         }
-        public void GetResources(int resources) 
+        public void GetResources() 
             { 
-                ResourceCounter+= resources * Modifier;
-            Console.WriteLine($"{resources * Modifier} {ResourceName} obtained! You now have {ResourceCounter} of {ResourceName}!");
+
+            if (Storage.ResourcesList.Count == 0) 
+                { 
+                    Console.WriteLine("You do not have any resources yet.");
+                    ResourceManagerPage.ResourceManager();
+                } 
+            else 
+            {
+                Storage.DisplayResourcesInStorage();
+                Console.WriteLine("Please select which Resource to add to");
+                //-------------logic----------------//
+
+                Console.WriteLine($"How many resources of {ResourceName} would you like to add");
+                int resources = int.Parse(Console.ReadLine());
+
+                ResourceCounter += resources * Modifier;
+                Console.WriteLine($"{resources * Modifier} {ResourceName} obtained! You now have {ResourceCounter} of {ResourceName}!");
+            }
+
+
         }
         public void SpendResources(int amount) 
             { 

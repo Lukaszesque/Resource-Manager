@@ -11,10 +11,10 @@ namespace ConsoleApp1.Pages
         public static void ResourceStatus()
         {
             Console.WriteLine("---------------------------------------------------------");
-            var x = Storage.programStorage;
-            Console.WriteLine($"You currently have {x.ResourcesList.Count} type of Resources in your collection");
+
+            Console.WriteLine($"You currently have {Storage.ResourcesList.Count} type of Resources in your collection");
             Console.WriteLine($"The resources that you have are as following:");
-            foreach (var item in x.ResourcesList)
+            foreach (var item in Storage.ResourcesList)
             {
                 Console.WriteLine($"Resource: " + item.ResourceName);
                 Console.WriteLine($"Amount: " + item.ResourceCounter);

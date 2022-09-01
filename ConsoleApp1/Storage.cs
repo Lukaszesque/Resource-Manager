@@ -22,6 +22,7 @@ namespace ConsoleApp1
                 {
                     x = item.ResourceName + ", ";
                 }
+                Console.WriteLine();
                 Console.WriteLine($"Your resources are: {x}");
             }
             else 

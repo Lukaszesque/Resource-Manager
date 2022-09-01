@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp1.Constants;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,6 +31,7 @@ namespace ConsoleApp1.Pages
                     break;
 
                 case "a":
+                    Extension_Methods.GetResources();
                     //Select which resource you would like to upgrade...
                     //Storage.ResourcesList[0].GetResources();
                     break;

@@ -19,8 +19,8 @@ namespace ConsoleApp1.Pages
             Storage.DisplayResourcesInStorage();
 
             Console.WriteLine($"Press 'w' to create {Constants.DTOs.DTOResources.Wood.Name} resource");
-            Console.WriteLine("Press 's' to create Stone resource");
-            Console.WriteLine("Press 'g' to create Gold resource");
+            Console.WriteLine($"Press 's' to create {Constants.DTOs.DTOResources.Stone.Name} resource");
+            Console.WriteLine($"Press 'g' to create {Constants.DTOs.DTOResources.Gold.Name} resource");
 
             ResourceManager newResource;
 
@@ -31,19 +31,15 @@ namespace ConsoleApp1.Pages
                 case "w":
 
                     Constants.Extension_Methods.CreateNewResource(Constants.DTOs.DTOResources.Wood.Name);
-                    MenuPage.Menu();
                     break;
 
                 case "s":
 
                     Constants.Extension_Methods.CreateNewResource(Constants.DTOs.DTOResources.Stone.Name);
-                    MenuPage.Menu();
                     break;
 
                 case "g":
-                    //TODO: Implement Gold feature
-                    Console.WriteLine("Not yet implemented :D");
-                    MenuPage.Menu();
+                    Constants.Extension_Methods.CreateNewResource(Constants.DTOs.DTOResources.Gold.Name);
                     break;
 
                 case "d":

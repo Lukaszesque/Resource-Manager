@@ -82,6 +82,8 @@ namespace ConsoleApp1.Constants
                 var newResource = new ResourceManager(Constants.DTOs.DTOResources.Wood.Name);
                 Storage.ResourcesList.Add(newResource);
             }
+
+            MenuPage.Menu();
         }
 
     }

@@ -16,6 +16,11 @@ namespace ConsoleApp1.Constants.DTOs
         { 
             Name = "Stone"
         };
+
+        public static Resource Gold = new Resource() 
+        { 
+            Name = "Gold"
+        };
         
 
     }

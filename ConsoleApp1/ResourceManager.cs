@@ -46,7 +46,7 @@ namespace ConsoleApp1
             UpgradeRequiredAmount = 50;
             Modifier = 1;
 
-            Console.WriteLine($"\nNew resource of {resourceName} created");
+            Console.WriteLine($"\n \nNew resource of {resourceName} created");
         }
     }
 

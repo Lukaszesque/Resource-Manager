@@ -17,7 +17,7 @@ namespace ConsoleApp1.Pages
 
             Storage.DisplayResourcesInStorage();
 
-            Console.WriteLine("Press 'w' to create Wood resource");
+            Console.WriteLine($"Press 'w' to create {Constants.DTOs.DTOResources.Wood.Name} resource");
             Console.WriteLine("Press 's' to create Stone resource");
             Console.WriteLine("Press 'g' to create Gold resource");
 
@@ -27,14 +27,37 @@ namespace ConsoleApp1.Pages
 
             switch (key)
             {
+                //Create an instance of a resource, but only if one does not already exist
                 case "w":
-                    newResource = new ResourceManager("Wood");
-                    Storage.ResourcesList.Add(newResource);
+                    bool alreadyExists = false;
+                    foreach (var item in Storage.ResourcesList)
+                    {
+                        if (item.ResourceName == Constants.DTOs.DTOResources.Wood.Name) 
+                            { 
+                                alreadyExists = true;
+                            }
+                    }
+                   
+                    if (!alreadyExists) 
+                        {
+                            newResource = new ResourceManager(Constants.DTOs.DTOResources.Wood.Name);
+                            Storage.ResourcesList.Add(newResource);
+                        }
+                    else 
+                        { 
+                            Console.WriteLine($"You already have {Constants.DTOs.DTOResources.Wood.Name}.");
+                        }
+                    
                     MenuPage.Menu();
                     break;
 
+                    //TODO: ensure only one instance can be created at a given time. Use a method to make it less wet.
+
                 case "s":
-                    Console.WriteLine("Not yet implemented :D");
+
+                    newResource = new ResourceManager(Constants.DTOs.DTOResources.Stone.Name);
+                    Storage.ResourcesList.Add(newResource);
+
                     MenuPage.Menu();
                     break;
 

@@ -32,7 +32,9 @@ namespace ConsoleApp1.Constants
 
                 for (int i = 0; i < Storage.ResourcesList.Count; i++)
                 {
-                    Console.WriteLine($"Press {i} to add to {Storage.ResourcesList[i].ResourceName}");
+                    Console.WriteLine($"Press {i} to add to {Storage.ResourcesList[i].ResourceName}"
+                        
+                        );
 
                     if (i > 9) 
                         {

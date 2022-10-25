@@ -79,7 +79,7 @@ namespace ConsoleApp1.Constants
             }
             else
             {
-                var newResource = new ResourceManager(Constants.DTOs.DTOResources.Wood.Name);
+                var newResource = new ResourceManager(resourceName);
                 Storage.ResourcesList.Add(newResource);
             }
 

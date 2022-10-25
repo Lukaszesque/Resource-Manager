@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,41 +28,20 @@ namespace ConsoleApp1.Pages
 
             switch (key)
             {
-                //Create an instance of a resource, but only if one does not already exist
                 case "w":
-                    bool alreadyExists = false;
-                    foreach (var item in Storage.ResourcesList)
-                    {
-                        if (item.ResourceName == Constants.DTOs.DTOResources.Wood.Name) 
-                            { 
-                                alreadyExists = true;
-                            }
-                    }
-                   
-                    if (!alreadyExists) 
-                        {
-                            newResource = new ResourceManager(Constants.DTOs.DTOResources.Wood.Name);
-                            Storage.ResourcesList.Add(newResource);
-                        }
-                    else 
-                        { 
-                            Console.WriteLine($"You already have {Constants.DTOs.DTOResources.Wood.Name}.");
-                        }
-                    
+
+                    Constants.Extension_Methods.CreateNewResource(Constants.DTOs.DTOResources.Wood.Name);
                     MenuPage.Menu();
                     break;
 
-                    //TODO: ensure only one instance can be created at a given time. Use a method to make it less wet.
-
                 case "s":
 
-                    newResource = new ResourceManager(Constants.DTOs.DTOResources.Stone.Name);
-                    Storage.ResourcesList.Add(newResource);
-
+                    Constants.Extension_Methods.CreateNewResource(Constants.DTOs.DTOResources.Stone.Name);
                     MenuPage.Menu();
                     break;
 
                 case "g":
+                    //TODO: Implement Gold feature
                     Console.WriteLine("Not yet implemented :D");
                     MenuPage.Menu();
                     break;

@@ -61,27 +61,16 @@ namespace ConsoleApp1.Constants
         public static void CreateNewResource(string resourceName) 
             {
             //Creates an instance of a resource, but only if one does not already exist
-            //TODO: handle null references exceptions
-            //TODO: refactor as per Pitambars code
-            bool alreadyExists = false;
-            foreach (var item in Storage.ResourcesList)
-            {
-                if (item.ResourceName == resourceName)
-                {
-                    alreadyExists = true;
-                }
-            }
 
-            if (alreadyExists)
-            {
-                Console.WriteLine("");
-                Console.WriteLine($"You already have {resourceName}.");
-            }
-            else
-            {
-                var newResource = new ResourceManager(resourceName);
-                Storage.ResourcesList.Add(newResource);
-            }
+            if (Storage.ResourcesList.Any(item => item.ResourceName == resourceName)) 
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine($"You already have {resourceName}.");
+                }
+            else 
+                {
+                Storage.ResourcesList.Add(new ResourceManager(resourceName));
+                }
 
             MenuPage.Menu();
         }

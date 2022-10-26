@@ -22,8 +22,6 @@ namespace ConsoleApp1.Pages
             Console.WriteLine($"Press 's' to create {Constants.DTOs.DTOResources.Stone.Name} resource");
             Console.WriteLine($"Press 'g' to create {Constants.DTOs.DTOResources.Gold.Name} resource");
 
-            ResourceManager newResource;
-
             string key = ConsoleApp1.ResourceManager.storeKey();
 
             switch (key)

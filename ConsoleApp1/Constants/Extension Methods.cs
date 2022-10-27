@@ -75,5 +75,37 @@ namespace ConsoleApp1.Constants
             MenuPage.Menu();
         }
 
+        public static void ViewResourceStatus() 
+            {
+            Console.WriteLine("---------------------------------------------------------");
+
+            Console.WriteLine($"You currently have {Storage.ResourcesList.Count} type of Resources in your collection");
+            Console.WriteLine($"The resources that you have are as following:");
+            foreach (var item in Storage.ResourcesList)
+            {
+                Console.WriteLine($"Resource: " + item.ResourceName);
+                Console.WriteLine($"Amount: " + item.ResourceCounter);
+                Console.WriteLine();
+            }
+        }
+
+        public static void CreateNewBuilding(string buildingName) 
+        { 
+            //retreive the building from the list. If none is obtained then the variable  will be Null
+            var builingObject = Storage.BuildingsList.FirstOrDefault(building => building.Name == buildingName);
+
+            if (builingObject == null)
+            {
+                Storage.BuildingsList.Add(new Building(buildingName));
+            }
+            else 
+            {
+                Console.WriteLine("");
+                Console.WriteLine($"You already have {builingObject.Name} constructed. It's level is {builingObject.Level}");
+            }
+
+            
+        }
     }
 }
+

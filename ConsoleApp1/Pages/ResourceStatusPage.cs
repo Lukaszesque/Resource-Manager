@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp1.Constants;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,16 +11,7 @@ namespace ConsoleApp1.Pages
     {
         public static void ResourceStatus()
         {
-            Console.WriteLine("---------------------------------------------------------");
-
-            Console.WriteLine($"You currently have {Storage.ResourcesList.Count} type of Resources in your collection");
-            Console.WriteLine($"The resources that you have are as following:");
-            foreach (var item in Storage.ResourcesList)
-            {
-                Console.WriteLine($"Resource: " + item.ResourceName);
-                Console.WriteLine($"Amount: " + item.ResourceCounter);
-                Console.WriteLine();
-            }
+            Extension_Methods.ViewResourceStatus();
 
             Console.WriteLine($"Press any key to navigate back to the menu");
             string key = ResourceManager.storeKey();

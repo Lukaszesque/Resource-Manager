@@ -9,8 +9,7 @@ namespace ConsoleApp1
     class Storage
     {
         public static List<ResourceManager> ResourcesList = new List<ResourceManager> { };
-
-        public static Storage programStorage = new Storage();
+        public static List<Building> BuildingsList = new List<Building>();  
 
         public static void DisplayResourcesInStorage() 
             {

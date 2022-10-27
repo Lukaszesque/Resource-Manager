@@ -75,10 +75,11 @@ namespace ConsoleApp1.Constants
             MenuPage.Menu();
         }
 
+        //TODO: Refactor this to be inclusive of Buildings as well. Float / Int does not matter as you need to convert to string
         public static void ViewResourceStatus() 
             {
-            Console.WriteLine("---------------------------------------------------------");
 
+            Console.WriteLine("---------------------------------------------------------");
             Console.WriteLine($"You currently have {Storage.ResourcesList.Count} type of Resources in your collection");
             Console.WriteLine($"The resources that you have are as following:");
             foreach (var item in Storage.ResourcesList)

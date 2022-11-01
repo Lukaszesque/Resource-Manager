@@ -8,16 +8,16 @@ namespace ConsoleApp1.Constants.DTOs
 {
     public class DTOResources
     {
-        public static Resource Wood = new Resource() 
+        public static Materials Wood = new Materials() 
         {    
             Name = "Wood"
         };
-        public static Resource Stone = new Resource()
+        public static Materials Stone = new Materials()
         { 
             Name = "Stone"
         };
 
-        public static Resource Gold = new Resource() 
+        public static Materials Gold = new Materials() 
         { 
             Name = "Gold"
         };

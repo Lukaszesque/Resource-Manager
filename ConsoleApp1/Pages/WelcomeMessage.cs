@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleApp1.Events.Classes;
 
 namespace ConsoleApp1.Pages
 {
@@ -14,7 +15,7 @@ namespace ConsoleApp1.Pages
             Console.WriteLine("Please choose from the following options:");
             Console.WriteLine("Press 'r' for the list of resources available");
 
-            string key = ResourceManager.storeKey();
+            string key = Resources.storeKey();
 
             switch (key)
             {

@@ -1,4 +1,6 @@
-﻿using ConsoleApp1.Pages;
+﻿using ConsoleApp1.Events.Classes;
+using ConsoleApp1.Events.Interfaces;
+using ConsoleApp1.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Constants
 {
-	internal class Extension_Methods
+    internal class Extension_Methods
 	{
 		public static void InputUnrecongnisedMessage() 
 			{
@@ -32,7 +34,7 @@ namespace ConsoleApp1.Constants
 
                 for (int i = 0; i < Storage.ResourcesList.Count; i++)
                 {
-                    Console.WriteLine($"Press {i} to add to {Storage.ResourcesList[i].ResourceName}"
+                    Console.WriteLine($"Press {i} to add to {Storage.ResourcesList[i].Name}"
                         
                         );
 
@@ -49,11 +51,11 @@ namespace ConsoleApp1.Constants
                 float amount = Convert.ToSingle(Console.ReadLine());  
 
                 //Sets the resources to the amount added multiplied by the modifier
-                Storage.ResourcesList[key].ResourceCounter += amount * Storage.ResourcesList[key].Modifier;
+                Storage.ResourcesList[key].Counter += amount * Storage.ResourcesList[key].Modifier;
 
                 Console.WriteLine("---------------------------------------------------------");
-                Console.WriteLine($"The {amount} of {Storage.ResourcesList[key].ResourceName} is multiplied by the Modifier value of {Storage.ResourcesList[key].Modifier}. This result in a total increase of {amount * Storage.ResourcesList[key].Modifier}");
-                Console.WriteLine($"You now have {Storage.ResourcesList[key].ResourceCounter} of {Storage.ResourcesList[key].ResourceName}");
+                Console.WriteLine($"The {amount} of {Storage.ResourcesList[key].Name} is multiplied by the Modifier value of {Storage.ResourcesList[key].Modifier}. This result in a total increase of {amount * Storage.ResourcesList[key].Modifier}");
+                Console.WriteLine($"You now have {Storage.ResourcesList[key].Counter} of {Storage.ResourcesList[key].Name}");
                 MenuPage.Menu();
             }
         }
@@ -62,30 +64,30 @@ namespace ConsoleApp1.Constants
             {
             //Creates an instance of a resource, but only if one does not already exist
 
-            if (Storage.ResourcesList.Any(item => item.ResourceName == resourceName)) 
+            if (Storage.ResourcesList.Any(item => item.Name == resourceName)) 
                 {
                     Console.WriteLine("");
                     Console.WriteLine($"You already have {resourceName}.");
                 }
             else 
                 {
-                Storage.ResourcesList.Add(new ResourceManager(resourceName));
+                Storage.ResourcesList.Add(new Resources(resourceName));
                 }
 
             MenuPage.Menu();
         }
 
-        //TODO: Refactor this to be inclusive of Buildings as well. Float / Int does not matter as you need to convert to string
-        public static void ViewResourceStatus() 
+        //TODO: Refactor this to be inclusive of Buildings as well. You might be able to use generics to solve the issue of multiple types
+        public static void ViewResourceStatus(List<IViewStatus> storageItem) 
             {
 
             Console.WriteLine("---------------------------------------------------------");
-            Console.WriteLine($"You currently have {Storage.ResourcesList.Count} type of Resources in your collection");
+            Console.WriteLine($"You currently have {storageItem.Count} type of Resources in your collection");
             Console.WriteLine($"The resources that you have are as following:");
-            foreach (var item in Storage.ResourcesList)
+            foreach (var item in storageItem)
             {
-                Console.WriteLine($"Resource: " + item.ResourceName);
-                Console.WriteLine($"Amount: " + item.ResourceCounter);
+                Console.WriteLine($"Resource: " + item.Name);
+                Console.WriteLine($"Amount: " + item.Counter);
                 Console.WriteLine();
             }
         }

@@ -1,4 +1,5 @@
 ﻿using ConsoleApp1.Constants;
+using ConsoleApp1.Events.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,10 @@ namespace ConsoleApp1.Pages
     {
         public static void ResourceStatus()
         {
-            Extension_Methods.ViewResourceStatus();
+            Extension_Methods.ViewResourceStatus(Storage.BuildingsList);
 
             Console.WriteLine($"Press any key to navigate back to the menu");
-            string key = ResourceManager.storeKey();
+            string key = Resources.storeKey();
 
             switch (key)
             {

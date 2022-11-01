@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-
+using ConsoleApp1.Events.Classes;
 
 namespace ConsoleApp1.Pages
 {
@@ -22,7 +22,7 @@ namespace ConsoleApp1.Pages
             Console.WriteLine($"Press 's' to create {Constants.DTOs.DTOResources.Stone.Name} resource");
             Console.WriteLine($"Press 'g' to create {Constants.DTOs.DTOResources.Gold.Name} resource");
 
-            string key = ConsoleApp1.ResourceManager.storeKey();
+            string key = Events.Classes.Resources.storeKey();
 
             switch (key)
             {

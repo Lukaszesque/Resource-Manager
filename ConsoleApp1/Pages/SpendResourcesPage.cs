@@ -1,4 +1,5 @@
 ﻿using ConsoleApp1.Constants;
+using ConsoleApp1.Events.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +14,13 @@ namespace ConsoleApp1.Pages
         {   
             //TODO: Implement the logic for this page
             //Notify user what resources he has
-            Extension_Methods.ViewResourceStatus();
+            Extension_Methods.ViewResourceStatus(Storage.ResourcesList);
 
             Console.WriteLine("Press 'b' to see your Buildings");
             Console.WriteLine("Press 'c' to create Buildings");
             Console.WriteLine("Press 'm' to navigate back to the Menu");
 
-            var key = ResourceManager.storeKey();
+            var key = Resources.storeKey();
 
             switch(key)
             { 

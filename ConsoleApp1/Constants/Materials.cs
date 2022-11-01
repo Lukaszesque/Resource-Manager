@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Constants
 {
-	public class Resource
-	{
-		public string Name { get; set; }	
-	}
+    public class Materials
+    {
+        public string Name { get; set; }    
+    }
 }

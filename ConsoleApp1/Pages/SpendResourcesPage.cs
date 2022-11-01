@@ -1,5 +1,6 @@
 ﻿using ConsoleApp1.Constants;
 using ConsoleApp1.Events.Classes;
+using ConsoleApp1.Events.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,9 @@ namespace ConsoleApp1.Pages
         public static void SpendResources() 
         {   
             //TODO: Implement the logic for this page
+
             //Notify user what resources he has
-            Extension_Methods.ViewResourceStatus(Storage.ResourcesList);
+            Extension_Methods.ViewStatus(Storage.ResourcesList.OfType<IViewStatus>().ToList());
 
             Console.WriteLine("Press 'b' to see your Buildings");
             Console.WriteLine("Press 'c' to create Buildings");

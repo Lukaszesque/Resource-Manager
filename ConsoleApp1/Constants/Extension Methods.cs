@@ -77,8 +77,7 @@ namespace ConsoleApp1.Constants
             MenuPage.Menu();
         }
 
-        //TODO: Refactor this to be inclusive of Buildings as well. You might be able to use generics to solve the issue of multiple types
-        public static void ViewResourceStatus(List<IViewStatus> storageItem) 
+        public static void ViewStatus(List<IViewStatus> storageItem) 
             {
 
             Console.WriteLine("---------------------------------------------------------");
@@ -92,8 +91,9 @@ namespace ConsoleApp1.Constants
             }
         }
 
-        public static void CreateNewBuilding(string buildingName) 
-        { 
+
+        public static void CreateNewBuilding(string buildingName)
+        {
             //retreive the building from the list. If none is obtained then the variable  will be Null
             var builingObject = Storage.BuildingsList.FirstOrDefault(building => building.Name == buildingName);
 
@@ -101,13 +101,13 @@ namespace ConsoleApp1.Constants
             {
                 Storage.BuildingsList.Add(new Building(buildingName));
             }
-            else 
+            else
             {
                 Console.WriteLine("");
-                Console.WriteLine($"You already have {builingObject.Name} constructed. It's level is {builingObject.Level}");
+                Console.WriteLine($"You already have {builingObject.Name} constructed. It's level is {builingObject.Counter}");
             }
 
-            
+
         }
     }
 }

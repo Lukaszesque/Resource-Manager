@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ConsoleApp1.Events.Classes;
 
-namespace ConsoleApp1.Pages
+namespace ConsoleApp1.Pages.Resources
 {
     internal class ResourceManagerPage
     {
@@ -17,7 +17,7 @@ namespace ConsoleApp1.Pages
             Console.WriteLine($"You currently have {Storage.ResourcesList.Count} Types of resources");
 
             Storage.DisplayResourcesInStorage();
-
+            //TODO: if a resource exists, the user should not see an option to create it
             Console.WriteLine($"Press 'w' to create {Constants.DTOs.DTOResources.Wood.Name} resource");
             Console.WriteLine($"Press 's' to create {Constants.DTOs.DTOResources.Stone.Name} resource");
             Console.WriteLine($"Press 'g' to create {Constants.DTOs.DTOResources.Gold.Name} resource");

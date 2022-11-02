@@ -1,6 +1,7 @@
 ﻿using ConsoleApp1.Events.Classes;
 using ConsoleApp1.Events.Interfaces;
 using ConsoleApp1.Pages;
+using ConsoleApp1.Pages.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -106,8 +107,6 @@ namespace ConsoleApp1.Constants
                 Console.WriteLine("");
                 Console.WriteLine($"You already have {builingObject.Name} constructed. It's level is {builingObject.Counter}");
             }
-
-
         }
     }
 }

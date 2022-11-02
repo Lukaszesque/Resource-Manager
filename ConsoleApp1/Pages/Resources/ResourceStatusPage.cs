@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1.Pages
+namespace ConsoleApp1.Pages.Resources
 {
     internal class ResourceStatusPage
     {
@@ -16,19 +16,19 @@ namespace ConsoleApp1.Pages
             Extension_Methods.ViewStatus(Storage.ResourcesList.OfType<IViewStatus>().ToList());
 
             Console.WriteLine($"Press any key to navigate back to the menu");
-            string key = Resources.storeKey();
+            string key = Events.Classes.Resources.storeKey();
 
             switch (key)
             {
                 default:
-                Console.WriteLine();
-                Console.WriteLine("Navigating to the Menu.");
-                MenuPage.Menu();
-                break;
+                    Console.WriteLine();
+                    Console.WriteLine("Navigating to the Menu.");
+                    MenuPage.Menu();
+                    break;
             }
 
         }
 
-      
+
     }
 }

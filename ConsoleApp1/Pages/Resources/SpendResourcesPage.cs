@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1.Pages
+namespace ConsoleApp1.Pages.Resources
 {
     internal class SpendResourcesPage
     {
-        public static void SpendResources() 
-        {   
+        public static void SpendResources()
+        {
             //TODO: Implement the logic for this page
 
             //Notify user what resources he has
@@ -22,10 +22,10 @@ namespace ConsoleApp1.Pages
             Console.WriteLine("Press 'c' to create Buildings");
             Console.WriteLine("Press 'm' to navigate back to the Menu");
 
-            var key = Resources.storeKey();
+            var key = Events.Classes.Resources.storeKey();
 
-            switch(key)
-            { 
+            switch (key)
+            {
                 case "b":
                     Console.WriteLine("To be implemented...");
                     break;

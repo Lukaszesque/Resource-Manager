@@ -1,5 +1,6 @@
 ﻿using ConsoleApp1.Constants;
 using ConsoleApp1.Events.Classes;
+using ConsoleApp1.Pages.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace ConsoleApp1.Pages
             Console.WriteLine("Press 'a' to add to your resources");
             Console.WriteLine("Press 'u' to spend your resources");
 
-            var key = Resources.storeKey();
+            var key = Events.Classes.Resources.storeKey();
 
             switch (key)
             {

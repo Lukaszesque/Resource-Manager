@@ -21,11 +21,11 @@ namespace ConsoleApp1.Pages
 
             switch (key)
             {
+                //TODO: Resolve the UI bug here
                 case "r":
                 Console.WriteLine("");
-                    CreateItem item = new CreateItem();
-                    item.Create(Storage.ResourcesList);
-                    break;
+                ResourceStatusPage.ResourceStatus();
+                break;
 
                 default:
                 Console.WriteLine("Input not recognised...");

@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ConsoleApp1.Events.Classes;
-using ConsoleApp1.Pages.Resources;
+using ConsoleApp1.Pages.ResourceFiles;
+using ConsoleApp1.Pages.Shared;
 
 namespace ConsoleApp1.Pages
 {
@@ -22,8 +23,9 @@ namespace ConsoleApp1.Pages
             {
                 case "r":
                 Console.WriteLine("");
-                ResourceManagerPage.ResourceManager();
-                break;
+                    CreateItem item = new CreateItem();
+                    item.Create(Storage.ResourcesList);
+                    break;
 
                 default:
                 Console.WriteLine("Input not recognised...");

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1.Pages.Resources
+namespace ConsoleApp1.Pages.ResourceFiles
 {
     internal class SpendResourcesPage
     {

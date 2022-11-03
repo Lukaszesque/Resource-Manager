@@ -1,7 +1,8 @@
 ﻿using ConsoleApp1.Events.Classes;
 using ConsoleApp1.Events.Interfaces;
 using ConsoleApp1.Pages;
-using ConsoleApp1.Pages.Resources;
+using ConsoleApp1.Pages.ResourceFiles;
+using ConsoleApp1.Pages.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,9 @@ namespace ConsoleApp1.Constants
             if (Storage.ResourcesList.Count == 0)
             {
                 Console.WriteLine("You do not have any resources yet.");
-                ResourceManagerPage.ResourceManager();
+                
+                CreateItem item = new CreateItem();
+                item.Create(Storage.ResourcesList);
             }
             else
             {

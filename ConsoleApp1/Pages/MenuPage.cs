@@ -1,6 +1,7 @@
 ﻿using ConsoleApp1.Constants;
 using ConsoleApp1.Events.Classes;
-using ConsoleApp1.Pages.Resources;
+using ConsoleApp1.Pages.ResourceFiles;
+using ConsoleApp1.Pages.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,8 @@ namespace ConsoleApp1.Pages
                     break;
 
                 case "c":
-                    ResourceManagerPage.ResourceManager();
+
+                    CreateItem.Item.Create(Storage.ResourcesList);
                     break;
 
                 case "a":

@@ -25,7 +25,6 @@ namespace ConsoleApp1.Pages.Shared
             Console.WriteLine($"Press 's' to create {Constants.DTOs.DTOResources.Stone.Name} resource");
             Console.WriteLine($"Press 'g' to create {Constants.DTOs.DTOResources.Gold.Name} resource");
 
-            CreateItem Item = new CreateItem();
             string key = Resources.storeKey();
 
             switch (key)
@@ -53,12 +52,13 @@ namespace ConsoleApp1.Pages.Shared
                     break;
 
                 default:
+                    CreateItem Item = new CreateItem();
                     Console.WriteLine("Input not recognised...");
                     Item.Create(Storage.ResourcesList);
                     break;
             }
         }
-        //TODO: Make use of this override when creating Buildings
+        //TODO: #1a Make use of this override when creating Buildings
         public void Create(List<Building> buildingList) 
             {
             Console.WriteLine($"");
@@ -66,7 +66,7 @@ namespace ConsoleApp1.Pages.Shared
             Console.WriteLine($"You currently have {buildingList.Count} types of Buildings");
 
             Storage.DisplayResourcesInStorage();
-            //TODO: if a resource exists, the user should not see an option to create it
+            //TODO: if a resource/building exists, the user should not see an option to create it
             Console.WriteLine($"Press 'm' to build a Mine");
 
             string key = Events.Classes.Resources.storeKey();
@@ -75,7 +75,7 @@ namespace ConsoleApp1.Pages.Shared
             {
                 case "m":
 
-                    Constants.Extension_Methods.CreateNewResource(Constants.DTOs.DTOBuildings.Mine.Name);
+                    Constants.Extension_Methods.CreateNewBuilding(Constants.DTOs.DTOBuildings.Mine.Name);
                     break;
 
                 case "d":
@@ -87,9 +87,9 @@ namespace ConsoleApp1.Pages.Shared
                     break;
 
                 default:
-                    Console.WriteLine("Input not recognised...");
                     CreateItem item = new CreateItem();
-                    item.Create(Storage.ResourcesList);
+                    Console.WriteLine("Input not recognised...");
+                    item.Create(Storage.BuildingsList);
                     break;
             }
 

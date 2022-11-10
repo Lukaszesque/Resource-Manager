@@ -104,12 +104,14 @@ namespace ConsoleApp1.Constants
             if (builingObject == null)
             {
                 Storage.BuildingsList.Add(new Building(buildingName));
+                Console.WriteLine($"You have constructed a new {buildingName}!");
             }
             else
             {
                 Console.WriteLine("");
                 Console.WriteLine($"You already have {builingObject.Name} constructed. It's level is {builingObject.Counter}");
             }
+            SpendResourcesPage.SpendResources();
         }
     }
 }

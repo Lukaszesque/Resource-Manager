@@ -1,6 +1,7 @@
 ﻿using ConsoleApp1.Constants;
 using ConsoleApp1.Events.Classes;
 using ConsoleApp1.Events.Interfaces;
+using ConsoleApp1.Pages.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,8 @@ namespace ConsoleApp1.Pages.ResourceFiles
                     break;
 
                 case "c":
-                    Console.WriteLine("To be implemented");
+                    CreateItem item = new CreateItem();
+                    item.Create(Storage.BuildingsList);
                     break;
 
                 case "m":

@@ -78,20 +78,14 @@ namespace ConsoleApp1.Pages.Shared
                     Constants.Extension_Methods.CreateNewBuilding(Constants.DTOs.DTOBuildings.Mine.Name);
                     break;
 
-                case "d":
-                    for (int i = 0; i < 100; i++)
-                    {
-                        Console.WriteLine("That is not a valid option. You will not live to see tomorrow.\n");
-                        Task.Delay(50);
-                    }
-                    break;
-
                 default:
                     CreateItem item = new CreateItem();
                     Console.WriteLine("Input not recognised...");
                     item.Create(Storage.BuildingsList);
                     break;
             }
+
+            SpendResourcesPage.SpendResources();
 
         }
     }

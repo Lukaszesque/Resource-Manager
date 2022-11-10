@@ -111,7 +111,6 @@ namespace ConsoleApp1.Constants
                 Console.WriteLine("");
                 Console.WriteLine($"You already have {builingObject.Name} constructed. It's level is {builingObject.Counter}");
             }
-            SpendResourcesPage.SpendResources();
         }
     }
 }

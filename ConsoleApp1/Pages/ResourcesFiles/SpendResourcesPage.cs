@@ -14,9 +14,9 @@ namespace ConsoleApp1.Pages.ResourceFiles
     {
         public static void SpendResources()
         {
-            //TODO: #1. Implement the logic for this page
+            //TODO: #1. Implement the logic for this page. Rename the files and classes to be Building related, and review the location on the files
 
-            //Notify user what resources he has
+            //Notify user of what resources he has
             Extension_Methods.ViewStatus(Storage.ResourcesList.OfType<IViewStatus>().ToList());
 
             Console.WriteLine("Press 'b' to see your Buildings");

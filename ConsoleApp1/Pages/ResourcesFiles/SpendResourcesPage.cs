@@ -13,7 +13,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
     {
         public static void SpendResources()
         {
-            //TODO: Implement the logic for this page
+            //TODO: #1. Implement the logic for this page
 
             //Notify user what resources he has
             Extension_Methods.ViewStatus(Storage.ResourcesList.OfType<IViewStatus>().ToList());

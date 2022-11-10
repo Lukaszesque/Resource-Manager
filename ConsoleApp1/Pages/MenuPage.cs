@@ -30,7 +30,7 @@ namespace ConsoleApp1.Pages
                     break;
 
                 case "c":
-                    //TODO: make the declaration of this dry (here and in other invokations)
+                    //TODO: Make the declaration of this dry (here and in other invokations)
                     CreateItem item = new CreateItem();
                     item.Create(Storage.ResourcesList);
                     break;

@@ -13,18 +13,16 @@ namespace ConsoleApp1.Pages
     {
         public static void Welcome()
         {
-            Console.WriteLine("Hi, I'm Nat Hunt. Welcome to the Resource Manager!");
-            Console.WriteLine("Please choose from the following options:");
-            Console.WriteLine("Press 'r' for the list of resources available");
+            Console.WriteLine("Hello and welcome to the Resource Manager!");
+            Console.WriteLine("Press 'm' to navigate to the Main Menu");
 
             string key = Events.Classes.Resources.storeKey();
 
             switch (key)
             {
-                //TODO: Resolve the UI bug here
-                case "r":
+                case "m":
                 Console.WriteLine("");
-                ResourceStatusPage.ResourceStatus();
+                MenuPage.Menu();
                 break;
 
                 default:

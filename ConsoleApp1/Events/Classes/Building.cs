@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Events.Classes
 {
-    internal class Building : IViewStatus
-    {
-        public string Name { get; set; }
-        public float Counter { get; set; }
-
-        public Building(string name)
-        {
-            Name = name;
-            Counter = 0;
-        }
-    }
+    //TODO: #1 Refactor this by replacing Building and Resource objects with EntityTypes objects
+    //internal class Building : EntityTypes
+    //{
+    //    public Building(string name)
+    //    {
+    //        ItemType = EntityTypes.Name;
+    //        ItemName = name;
+    //        ItemCounter = 0;
+    //    }
+    //}
 }

@@ -14,7 +14,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
     {
         public static void SpendResources()
         {
-            //TODO: #1. Implement the logic for this page. Rename the files and classes to be Building related, and review the location on the files
+            //TODO: Rename the files and classes to be Building related, and review the location on the files
 
             //Notify user of what resources he has
             Extension_Methods.ViewStatus(Storage.ResourcesList.OfType<IViewStatus>().ToList());
@@ -28,7 +28,8 @@ namespace ConsoleApp1.Pages.ResourceFiles
             switch (key)
             {
                 case "b":
-                    Console.WriteLine("To be implemented...");
+                    Extension_Methods.ViewStatus(Storage.BuildingsList.OfType<IViewStatus>().ToList());
+                    SpendResources();
                     break;
 
                 case "c":
@@ -44,8 +45,6 @@ namespace ConsoleApp1.Pages.ResourceFiles
                     Extension_Methods.InputUnrecongnisedMessage();
                     SpendResources();
                     break;
-
-
             }
 
 

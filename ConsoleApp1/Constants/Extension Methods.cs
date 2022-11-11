@@ -81,16 +81,17 @@ namespace ConsoleApp1.Constants
             MenuPage.Menu();
         }
 
-        public static void ViewStatus(List<IViewStatus> storageItem) 
+        //TODO: 1# Refactor this using the EntityList class
+        public static void ViewStatus(List<Building> buildingList) 
             {
 
             Console.WriteLine("---------------------------------------------------------");
-            Console.WriteLine($"You currently have {storageItem.Count} type of Resources in your collection");
+            Console.WriteLine($"You currently have {buildingList.Count} type of {buildingList.First().ItemType} in your collection");
             Console.WriteLine($"The resources that you have are as following:");
-            foreach (var item in storageItem)
+            foreach (var item in buildingList)
             {
-                Console.WriteLine($"Resource: " + item.Name);
-                Console.WriteLine($"Amount: " + item.Counter);
+                Console.WriteLine($"Resource: " + item.ItemName);
+                Console.WriteLine($"Amount: " + item.ItemCounter);
                 Console.WriteLine();
             }
         }
@@ -99,7 +100,7 @@ namespace ConsoleApp1.Constants
         public static void CreateNewBuilding(string buildingName)
         {
             //retreive the building from the list. If none is obtained then the variable  will be Null
-            var builingObject = Storage.BuildingsList.FirstOrDefault(building => building.Name == buildingName);
+            var builingObject = Storage.BuildingsList.FirstOrDefault(building => building.ItemName == buildingName);
 
             if (builingObject == null)
             {
@@ -109,7 +110,7 @@ namespace ConsoleApp1.Constants
             else
             {
                 Console.WriteLine("");
-                Console.WriteLine($"You already have {builingObject.Name} constructed. It's level is {builingObject.Counter}");
+                Console.WriteLine($"You already have {builingObject.ItemName} constructed. It's level is {builingObject.ItemCounter}");
             }
         }
     }

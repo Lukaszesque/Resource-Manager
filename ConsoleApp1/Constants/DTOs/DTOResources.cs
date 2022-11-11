@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleApp1.Events.Classes;
 
 namespace ConsoleApp1.Constants.DTOs
 {
     public class DTOResources
     {
-        public static Materials Wood = new Materials() 
+        public static EntityTypes Wood = new EntityTypes() 
         {    
             Name = "Wood"
         };
-        public static Materials Stone = new Materials()
+        public static EntityTypes Stone = new EntityTypes()
         { 
             Name = "Stone"
         };
 
-        public static Materials Gold = new Materials() 
+        public static EntityTypes Gold = new EntityTypes() 
         { 
             Name = "Gold"
         };

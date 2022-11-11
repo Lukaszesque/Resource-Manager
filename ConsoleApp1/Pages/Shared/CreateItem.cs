@@ -11,7 +11,8 @@ namespace ConsoleApp1.Pages.Shared
 {
     internal class CreateItem
     {
-        
+
+        //TODO #1b Create can not be generic to Reosurces and Buildings
         public void Create(List<Resources> resourcesList) 
             {
 
@@ -58,12 +59,13 @@ namespace ConsoleApp1.Pages.Shared
                     break;
             }
         }
-        //TODO: #1a Make use of this override when creating Buildings
-        public void Create(List<Building> buildingList) 
+
+        //TODO #1 Create can not be generic to Reosurces and Buildings
+        public void Create(List<EntityTypes> entityList) 
             {
             Console.WriteLine($"");
             Console.WriteLine("---------------------------------------------------------");
-            Console.WriteLine($"You currently have {buildingList.Count} types of Buildings");
+            Console.WriteLine($"You currently have {entityList.Count} types of {entityList.First().ItemType}s");
 
             Storage.DisplayResourcesInStorage();
             //TODO: if a resource/building exists, the user should not see an option to create it

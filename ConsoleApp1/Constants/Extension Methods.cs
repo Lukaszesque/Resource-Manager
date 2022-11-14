@@ -82,13 +82,19 @@ namespace ConsoleApp1.Constants
         }
 
         //TODO: 1# Refactor this using the EntityList class
-        public static void ViewStatus(List<EntityTypes> buildingList) 
+        public static void ViewStatus(List<EntityTypes> entityList, string entityType) 
             {
 
             Console.WriteLine("---------------------------------------------------------");
-            Console.WriteLine($"You currently have {buildingList.Count} type of {buildingList.First().ItemType} in your collection");
-            Console.WriteLine($"The resources that you have are as following:");
-            foreach (var item in buildingList)
+            if (entityList.Count == 0) 
+                {Console.WriteLine($"You do not have any {entityType}s yet");}
+            else
+                { 
+                Console.WriteLine($"You currently have {entityList.Count} type of {entityType} in your collection");
+                Console.WriteLine($"The resources that you have are as following:");
+            }
+            
+            foreach (var item in entityList)
             {
                 Console.WriteLine($"Resource: " + item.ItemName);
                 Console.WriteLine($"Amount: " + item.ItemCounter);

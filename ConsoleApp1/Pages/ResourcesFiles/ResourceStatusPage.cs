@@ -11,9 +11,9 @@ namespace ConsoleApp1.Pages.ResourceFiles
 {
     internal class ResourceStatusPage
     {
-        public static void ResourceStatus()
+        public static void ResourceStatus(string resourceType)
         {
-            Extension_Methods.ViewStatus(Storage.ResourcesList);
+            Extension_Methods.ViewStatus(Storage.ResourcesList, resourceType);
 
             Console.WriteLine($"Press any key to navigate back to the menu");
             string key = Events.Classes.Resources.storeKey();

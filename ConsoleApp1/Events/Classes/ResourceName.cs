@@ -8,6 +8,12 @@ namespace ConsoleApp1.Events.Classes
 {
     public class EntityNames
     {
-        public string Name { get; set; }    
+        public string Type { get; set; }
+        public string Name { get; set; }
+        
+        public EntityNames(string entityType) 
+            { 
+                Type = entityType;
+            }
     }
 }

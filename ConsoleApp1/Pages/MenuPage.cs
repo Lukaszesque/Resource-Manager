@@ -1,4 +1,5 @@
 ﻿using ConsoleApp1.Constants;
+using ConsoleApp1.Constants.DTOs;
 using ConsoleApp1.Events.Classes;
 using ConsoleApp1.Pages.ResourceFiles;
 using ConsoleApp1.Pages.Shared;
@@ -26,7 +27,7 @@ namespace ConsoleApp1.Pages
             switch (key)
             {
                 case "r":
-                    ResourceStatusPage.ResourceStatus();
+                    ResourceStatusPage.ResourceStatus(resourceType: DTOResources.Wood.Type);
                     break;
 
                 case "c":

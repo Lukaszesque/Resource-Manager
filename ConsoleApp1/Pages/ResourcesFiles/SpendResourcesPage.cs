@@ -17,7 +17,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
             //TODO: Rename the files and classes to be Building related, and review the location on the files
 
             //Notify user of what resources he has
-            Extension_Methods.ViewStatus(Storage.ResourcesList.OfType<IViewStatus>().ToList());
+            Extension_Methods.ViewStatus(Storage.ResourcesList);
 
             Console.WriteLine("Press 'b' to see your Buildings");
             Console.WriteLine("Press 'c' to create Buildings");
@@ -28,7 +28,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
             switch (key)
             {
                 case "b":
-                    Extension_Methods.ViewStatus(Storage.BuildingsList.OfType<IViewStatus>().ToList());
+                    Extension_Methods.ViewStatus(Storage.BuildingsList);
                     SpendResources();
                     break;
 

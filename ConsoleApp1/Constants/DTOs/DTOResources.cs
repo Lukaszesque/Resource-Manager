@@ -9,16 +9,16 @@ namespace ConsoleApp1.Constants.DTOs
 {
     public class DTOResources
     {
-        public static EntityTypes Wood = new EntityTypes() 
+        public static EntityNames Wood = new EntityNames() 
         {    
             Name = "Wood"
         };
-        public static EntityTypes Stone = new EntityTypes()
+        public static EntityNames Stone = new EntityNames()
         { 
             Name = "Stone"
         };
 
-        public static EntityTypes Gold = new EntityTypes() 
+        public static EntityNames Gold = new EntityNames() 
         { 
             Name = "Gold"
         };

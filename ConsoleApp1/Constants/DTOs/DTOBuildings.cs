@@ -9,8 +9,9 @@ namespace ConsoleApp1.Constants.DTOs
 {
     internal class DTOBuildings
     {
-        public static Building Mine = new Building("Mine")
+        public static EntityNames Mine = new EntityNames()
         {
+            Name = "Mine"
         };
     }
 }

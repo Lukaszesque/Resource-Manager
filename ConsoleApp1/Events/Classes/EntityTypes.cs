@@ -13,11 +13,11 @@ namespace ConsoleApp1.Events.Classes
         public string ItemName { get; set; }
         public float ItemCounter { get; set; }
 
-        public EntityTypes(string itemType, string itemName, float itemCounter) 
+        public EntityTypes(string itemType, string itemName) 
             { 
                 this.ItemType = itemType;
                 this.ItemName = itemName;
-                this.ItemCounter = itemCounter;
+                this.ItemCounter = 1;
             }
     }
 }

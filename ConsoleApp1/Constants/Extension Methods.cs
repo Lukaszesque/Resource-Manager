@@ -38,7 +38,7 @@ namespace ConsoleApp1.Constants
 
                 for (int i = 0; i < Storage.ResourcesList.Count; i++)
                 {
-                    Console.WriteLine($"Press {i} to add to {Storage.ResourcesList[i].Name}"
+                    Console.WriteLine($"Press {i} to add to {Storage.ResourcesList[i].ItemName}"
                         
                         );
 
@@ -54,35 +54,35 @@ namespace ConsoleApp1.Constants
                 Console.WriteLine("Please select how much resources to add");
                 float amount = Convert.ToSingle(Console.ReadLine());  
 
-                //Sets the resources to the amount added multiplied by the modifier
-                Storage.ResourcesList[key].Counter += amount * Storage.ResourcesList[key].Modifier;
+                //TODO: Implement a resource modifier
 
                 Console.WriteLine("---------------------------------------------------------");
-                Console.WriteLine($"The {amount} of {Storage.ResourcesList[key].Name} is multiplied by the Modifier value of {Storage.ResourcesList[key].Modifier}. This result in a total increase of {amount * Storage.ResourcesList[key].Modifier}");
-                Console.WriteLine($"You now have {Storage.ResourcesList[key].Counter} of {Storage.ResourcesList[key].Name}");
+                //Console.WriteLine($"The {amount} of {Storage.ResourcesList[key].ItemName} is multiplied by the Modifier value of {Storage.ResourcesList[key].Modifier}. This result in a total increase of {amount * Storage.ResourcesList[key].Modifier}");
+                Console.WriteLine($"You now have {Storage.ResourcesList[key].ItemCounter} of {Storage.ResourcesList[key].ItemName}");
                 MenuPage.Menu();
             }
         }
-
+        //TODO: MErge this and building method together
         public static void CreateNewResource(string resourceName) 
             {
+            string itemType = "Resource";
             //Creates an instance of a resource, but only if one does not already exist
 
-            if (Storage.ResourcesList.Any(item => item.Name == resourceName)) 
+            if (Storage.ResourcesList.Any(item => item.ItemName == resourceName)) 
                 {
                     Console.WriteLine("");
                     Console.WriteLine($"You already have {resourceName}.");
                 }
             else 
                 {
-                Storage.ResourcesList.Add(new Resources(resourceName));
+                Storage.ResourcesList.Add(new EntityTypes(itemType, resourceName));
                 }
 
             MenuPage.Menu();
         }
 
         //TODO: 1# Refactor this using the EntityList class
-        public static void ViewStatus(List<Building> buildingList) 
+        public static void ViewStatus(List<EntityTypes> buildingList) 
             {
 
             Console.WriteLine("---------------------------------------------------------");
@@ -101,10 +101,11 @@ namespace ConsoleApp1.Constants
         {
             //retreive the building from the list. If none is obtained then the variable  will be Null
             var builingObject = Storage.BuildingsList.FirstOrDefault(building => building.ItemName == buildingName);
+            string BuildingType = "Building";
 
             if (builingObject == null)
             {
-                Storage.BuildingsList.Add(new Building(buildingName));
+                Storage.BuildingsList.Add(new EntityTypes(BuildingType,buildingName));
                 Console.WriteLine($"You have constructed a new {buildingName}!");
             }
             else

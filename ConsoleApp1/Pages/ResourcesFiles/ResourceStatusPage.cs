@@ -13,7 +13,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
     {
         public static void ResourceStatus()
         {
-            Extension_Methods.ViewStatus(Storage.ResourcesList.OfType<IViewStatus>().ToList());
+            Extension_Methods.ViewStatus(Storage.ResourcesList);
 
             Console.WriteLine($"Press any key to navigate back to the menu");
             string key = Events.Classes.Resources.storeKey();

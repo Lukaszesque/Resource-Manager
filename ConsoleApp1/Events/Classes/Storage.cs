@@ -9,7 +9,7 @@ namespace ConsoleApp1.Events.Classes
     class Storage
     {
         //TODO: static is inefficient - refactor these as non static properties
-        public static List<Resources> ResourcesList = new List<Resources> { };
+        public static List<EntityTypes> ResourcesList = new List<EntityTypes> { };
         public static List<EntityTypes> BuildingsList = new List<EntityTypes>();
 
         //TODO: This belongs in the Shared folder. Refactor it to account for Buildings
@@ -21,7 +21,7 @@ namespace ConsoleApp1.Events.Classes
 
                 foreach (var item in ResourcesList)
                 {
-                    x = item.Name + ", ";
+                    x = item.ItemName + ", ";
                 }
                 Console.WriteLine();
                 Console.WriteLine($"Your resources are: {x}");

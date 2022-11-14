@@ -10,21 +10,22 @@ namespace ConsoleApp1.Events.Classes
 {
     internal class Resources : IViewStatus
     {
-        public string Name { get; set; }
-        public float Counter { get; set; }
+        public string ItemType { get; set; }
+        public string ItemName { get; set; }
+        public float ItemCounter { get; set; }
         public float UpgradeRequiredAmount { get; set; }
         public float UpgradeCounter { get; set; }
         public float Modifier { get; set; }
         public void ShowResources()
         {
-            Console.WriteLine($"You now have {Counter} of {Name}!");
+            Console.WriteLine($"You now have {ItemCounter} of {ItemName}!");
         }
 
         public void SpendResources(int amount)
         {
-            Counter -= amount;
+            ItemCounter -= amount;
             UpgradeCounter += amount;
-            Console.WriteLine($"You now have {Counter} of {Name}!");
+            Console.WriteLine($"You now have {ItemCounter} of {ItemName}!");
 
             if (UpgradeCounter >= UpgradeRequiredAmount)
             {
@@ -36,14 +37,14 @@ namespace ConsoleApp1.Events.Classes
         {
             Modifier *= 1.1f;
             UpgradeCounter *= 1.2f;
-            Console.WriteLine($"{Name} upgraded! Next level will cost {UpgradeCounter} of {Name}");
+            Console.WriteLine($"{ItemName} upgraded! Next level will cost {UpgradeCounter} of {ItemName}");
         }
 
         public static string storeKey() => Console.ReadKey().Key.ToString().ToLower();
         public Resources(string resourceName)
         {
-            Name = resourceName;
-            Counter = 100;
+            ItemName = resourceName;
+            ItemCounter = 100;
             UpgradeRequiredAmount = 50;
             Modifier = 1;
 

@@ -1,4 +1,5 @@
-﻿using ConsoleApp1.Events.Classes;
+﻿using ConsoleApp1.Constants.DTOs;
+using ConsoleApp1.Events.Classes;
 using ConsoleApp1.Events.Interfaces;
 using ConsoleApp1.Pages;
 using ConsoleApp1.Pages.ResourceFiles;
@@ -28,11 +29,11 @@ namespace ConsoleApp1.Constants
                 Console.WriteLine("You do not have any resources yet.");
                 
                 CreateItem item = new CreateItem();
-                item.Create(Storage.ResourcesList);
+                item.Create(Storage.ResourcesList, DTOResources.Wood.Type);
             }
             else
             {
-                Storage.DisplayResourcesInStorage();
+                Storage.DisplayResourcesInStorage(Storage.ResourcesList);
                 Console.WriteLine("Please select which Resource to add to:");
                 Console.WriteLine("");
 
@@ -62,7 +63,7 @@ namespace ConsoleApp1.Constants
                 MenuPage.Menu();
             }
         }
-        //TODO: MErge this and building method together
+        //TODO: Merge this and building method together
         public static void CreateNewResource(string resourceName) 
             {
             string itemType = "Resource";
@@ -81,10 +82,9 @@ namespace ConsoleApp1.Constants
             MenuPage.Menu();
         }
 
-        //TODO: 1# Refactor this using the EntityList class
         public static void ViewStatus(List<EntityTypes> entityList, string entityType) 
             {
-
+            Console.WriteLine($"");
             Console.WriteLine("---------------------------------------------------------");
             if (entityList.Count == 0) 
                 {Console.WriteLine($"You do not have any {entityType}s yet");}

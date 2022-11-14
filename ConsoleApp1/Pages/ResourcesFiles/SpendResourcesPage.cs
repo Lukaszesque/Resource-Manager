@@ -1,4 +1,5 @@
 ﻿using ConsoleApp1.Constants;
+using ConsoleApp1.Constants.DTOs;
 using ConsoleApp1.Events.Classes;
 using ConsoleApp1.Events.Interfaces;
 using ConsoleApp1.Pages.Shared;
@@ -34,7 +35,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
 
                 case "c":
                     CreateItem item = new CreateItem();
-                    item.Create(Storage.BuildingsList);
+                    item.Create(Storage.BuildingsList, DTOBuildings.Mine.Type);
                     break;
 
                 case "m":

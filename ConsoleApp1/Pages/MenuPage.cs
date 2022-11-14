@@ -33,7 +33,7 @@ namespace ConsoleApp1.Pages
                 case "c":
                     //TODO: Make the declaration of this dry (here and in other invokations)
                     CreateItem item = new CreateItem();
-                    item.Create(Storage.ResourcesList);
+                    item.Create(Storage.ResourcesList, DTOResources.Wood.Type);
                     break;
 
                 case "a":

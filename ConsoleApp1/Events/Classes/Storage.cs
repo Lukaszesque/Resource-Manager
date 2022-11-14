@@ -13,13 +13,13 @@ namespace ConsoleApp1.Events.Classes
         public static List<EntityTypes> BuildingsList = new List<EntityTypes>();
 
         //TODO: This belongs in the Shared folder. Refactor it to account for Buildings
-        public static void DisplayResourcesInStorage()
+        public static void DisplayResourcesInStorage(List<EntityTypes> entityList)
         {
-            if (ResourcesList.Count > 0)
+            if (entityList.Count > 0)
             {
                 string x = string.Empty;
 
-                foreach (var item in ResourcesList)
+                foreach (var item in entityList)
                 {
                     x = item.ItemName + ", ";
                 }

@@ -29,7 +29,7 @@ namespace ConsoleApp1.Constants
                 Console.WriteLine("You do not have any resources yet.");
                 
                 CreateItem item = new CreateItem();
-                item.Create(Storage.ResourcesList, DTOResources.Wood.Type);
+                item.Create(Storage.ResourcesList, DTOResources.Wood);
             }
             else
             {
@@ -97,6 +97,7 @@ namespace ConsoleApp1.Constants
             foreach (var item in entityList)
             {
                 Console.WriteLine($"Resource: " + item.ItemName);
+                //TODO: #3 Check that the counter shows the number or level of the resource / building correctly
                 Console.WriteLine($"Amount: " + item.ItemCounter);
                 Console.WriteLine();
             }

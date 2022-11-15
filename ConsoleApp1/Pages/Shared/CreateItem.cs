@@ -17,7 +17,6 @@ namespace ConsoleApp1.Pages.Shared
             {
 
             Constants.Extension_Methods.ViewStatus(entityList, entityType);
-            Storage.DisplayResourcesInStorage(Storage.ResourcesList);
 
             switch (entityType) { 
                 case "Building":
@@ -40,28 +39,28 @@ namespace ConsoleApp1.Pages.Shared
                     break;
 
                 case "Resource":
-                    Console.WriteLine($"Press 'w' to build {Constants.DTOs.DTOResources.test}");
+                    Console.WriteLine($"Press 'w' to build {Constants.DTOs.DTOResources.Wood}");
                     Console.WriteLine($"Press 's' to build {Constants.DTOs.DTOResources.Stone}");
                     Console.WriteLine($"Press 'g' to build {Constants.DTOs.DTOResources.Gold}");
                     key = Events.Classes.Resources.storeKey();
                     switch (key)
                     {
                         case "w":
-                            Constants.Extension_Methods.CreateNewResource(Constants.DTOs.DTOResources.Wood.Name);
+                            Constants.Extension_Methods.CreateNewResource(Constants.DTOs.DTOResources.Wood);
                             break;
 
                         case "s":
-                            Constants.Extension_Methods.CreateNewResource(Constants.DTOs.DTOResources.Stone.Name);
+                            Constants.Extension_Methods.CreateNewResource(Constants.DTOs.DTOResources.Stone);
                             break;
 
                         case "g":
-                            Constants.Extension_Methods.CreateNewResource(Constants.DTOs.DTOResources.Gold.Name);
+                            Constants.Extension_Methods.CreateNewResource(Constants.DTOs.DTOResources.Gold);
                             break;
 
                         default:
                             CreateItem item = new CreateItem();
                             Console.WriteLine("Input not recognised...");
-                            item.Create(Storage.ResourcesList, DTOResources.Wood.Type);
+                            item.Create(Storage.ResourcesList, DTOResources.ItemType);
                             break;
                     }
                     break;

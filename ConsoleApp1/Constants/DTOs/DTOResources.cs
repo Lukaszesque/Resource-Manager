@@ -8,21 +8,10 @@ using ConsoleApp1.Events.Classes;
 namespace ConsoleApp1.Constants.DTOs
 {
     public class DTOResources
-    {
-        public static EntityNames Wood = new EntityNames(entityType: "Resource") 
-        {    
-            Name = "Wood"
-        };
-        public static EntityNames Stone = new EntityNames(entityType: "Resource")
-        { 
-            Name = "Stone"
-        };
-
-        public static EntityNames Gold = new EntityNames(entityType: "Resource") 
-        { 
-            Name = "Gold"
-        };
-        
-        //public const string Wood = "Wood";
+    { 
+        public const string ItemType = "Resource";
+        public const string Wood = "Wood";
+        public const string Stone = "Stone";
+        public const string Gold = "Gold";
     }
 }

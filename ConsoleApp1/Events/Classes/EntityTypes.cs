@@ -7,17 +7,19 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Events.Classes
 {
-    internal class EntityTypes : IViewStatus
+    public class EntityTypes : IViewStatus
     {
         public string ItemType { get; set; }
         public string ItemName { get; set; }
+        public int ItemLevel { get; set; }
         public float ItemCounter { get; set; }
 
         public EntityTypes(string itemType, string itemName) 
             { 
                 this.ItemType = itemType;
                 this.ItemName = itemName;
-                this.ItemCounter = 1;
+                this.ItemLevel = 1;
+                this.ItemCounter = 0;
             }
     }
 }

@@ -1,7 +1,8 @@
-﻿using ConsoleApp1.Pages;
+﻿using ConsoleApp1.Events.Classes;
+using ConsoleApp1.Pages;
 
 //Program
-WelcomeMessage.Welcome();
+StartUp.Welcome();
 
 
     

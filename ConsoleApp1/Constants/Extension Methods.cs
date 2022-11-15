@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Constants
 {
+    //TODO: #2 most of the methods in here need to get relocated.
     internal class Extension_Methods
 	{
 		public static void InputUnrecongnisedMessage() 
@@ -33,7 +34,7 @@ namespace ConsoleApp1.Constants
             }
             else
             {
-                Storage.DisplayResourcesInStorage(Storage.ResourcesList);
+                DisplayInformation.DisplayResourcesInStorage(Storage.ResourcesList);
                 Console.WriteLine("Please select which Resource to add to:");
                 Console.WriteLine("");
 
@@ -54,8 +55,6 @@ namespace ConsoleApp1.Constants
                 Console.WriteLine("---------------------------------------------------------");
                 Console.WriteLine("Please select how much resources to add");
                 float amount = Convert.ToSingle(Console.ReadLine());  
-
-                //TODO: Implement a resource modifier
 
                 Console.WriteLine("---------------------------------------------------------");
                 //Console.WriteLine($"The {amount} of {Storage.ResourcesList[key].ItemName} is multiplied by the Modifier value of {Storage.ResourcesList[key].Modifier}. This result in a total increase of {amount * Storage.ResourcesList[key].Modifier}");
@@ -97,8 +96,8 @@ namespace ConsoleApp1.Constants
             foreach (var item in entityList)
             {
                 Console.WriteLine($"Resource: " + item.ItemName);
-                //TODO: #3 Check that the counter shows the number or level of the resource / building correctly
-                Console.WriteLine($"Amount: " + item.ItemCounter);
+                Console.WriteLine($"Level: " + item.ItemLevel);
+                Console.Write($"Amount: {item.ItemCounter}");
                 Console.WriteLine();
             }
         }

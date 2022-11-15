@@ -12,7 +12,6 @@ namespace ConsoleApp1.Pages.Shared
 {
     internal class CreateItem
     {
-        //TODO: #1: Adapt this for Resources
         public void Create(List<EntityTypes> entityList, string entityType) 
             {
 

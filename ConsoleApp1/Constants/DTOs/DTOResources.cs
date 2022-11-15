@@ -23,6 +23,6 @@ namespace ConsoleApp1.Constants.DTOs
             Name = "Gold"
         };
         
-
+        //public const string Wood = "Wood";
     }
 }

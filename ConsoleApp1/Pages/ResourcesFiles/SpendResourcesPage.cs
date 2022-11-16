@@ -25,7 +25,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
             Console.WriteLine("Press 'c' to create Buildings");
             Console.WriteLine("Press 'm' to navigate back to the Menu");
 
-            var key = Events.Classes.Resources.storeKey();
+            var key = new Extension_Methods().storeKey();
 
             switch (key)
             {

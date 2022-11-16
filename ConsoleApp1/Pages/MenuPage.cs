@@ -23,7 +23,7 @@ namespace ConsoleApp1.Pages
             Console.WriteLine("Press 'a' to add to your resources");
             Console.WriteLine("Press 'u' to spend your resources");
 
-            var key = Resources.storeKey();
+            var key = new Extension_Methods().storeKey();
 
             switch (key)
             {

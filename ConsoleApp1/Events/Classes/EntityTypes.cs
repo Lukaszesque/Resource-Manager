@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Events.Classes
 {
-    public class EntityTypes : IViewStatus
+    public class EntityTypes : IItemDetails
     {
         public string ItemType { get; set; }
         public string ItemName { get; set; }

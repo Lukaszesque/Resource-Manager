@@ -1,4 +1,5 @@
-﻿using ConsoleApp1.Constants.DTOs;
+﻿using ConsoleApp1.Constants;
+using ConsoleApp1.Constants.DTOs;
 using ConsoleApp1.Events.Classes;
 using ConsoleApp1.Events.Interfaces;
 using ConsoleApp1.Pages.ResourceFiles;
@@ -21,7 +22,7 @@ namespace ConsoleApp1.Pages.Shared
                 case "Building":
 
                     Console.WriteLine($"Press 'm' to build a {new DTOBuildings().Mine}");
-                    string key = Events.Classes.Resources.storeKey();
+                    string key = new Extension_Methods().storeKey();
                     switch (key)
                     {
                         case "m":
@@ -41,7 +42,7 @@ namespace ConsoleApp1.Pages.Shared
                     Console.WriteLine($"Press 'w' to build {new DTOResources().Wood}");
                     Console.WriteLine($"Press 's' to build {new DTOResources().Stone}");
                     Console.WriteLine($"Press 'g' to build {new DTOResources().Gold}");
-                    key = Resources.storeKey();
+                    key = new Extension_Methods().storeKey();
                     switch (key)
                     {
                         case "w":

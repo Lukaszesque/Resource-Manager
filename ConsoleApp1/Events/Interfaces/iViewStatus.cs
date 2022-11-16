@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Events.Interfaces
 {
-    interface IViewStatus
+    interface IItemDetails
     { 
         string ItemType { get; set; }
         string ItemName { get; set;}

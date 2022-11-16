@@ -20,14 +20,8 @@ namespace ConsoleApp1.Constants
 			Console.WriteLine("Input not recognised...");
 			}
 
-        
+        public string storeKey() => Console.ReadKey().Key.ToString().ToLower();
 
-
-
-       
-
-
-        
     }
-}
 
+}

@@ -7,11 +7,11 @@ using ConsoleApp1.Events.Classes;
 
 namespace ConsoleApp1.Constants.DTOs
 {
-    public class DTOResources
+    internal class DTOResources
     { 
-        public const string ItemType = "Resource";
-        public const string Wood = "Wood";
-        public const string Stone = "Stone";
-        public const string Gold = "Gold";
+        internal string ItemType = "Resource";
+        internal string Wood = "Wood";
+        internal string Stone = "Stone";
+        internal string Gold = "Gold";
     }
 }

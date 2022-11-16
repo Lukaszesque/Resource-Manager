@@ -3,6 +3,7 @@ using ConsoleApp1.Constants.DTOs;
 using ConsoleApp1.Events.Classes;
 using ConsoleApp1.Events.Interfaces;
 using ConsoleApp1.Pages.Shared;
+using ConsoleApp1.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
             //TODO: Rename the files and classes to be Building related, and review the location on the files
 
             //Notify user of what resources he has
-            Extension_Methods.ViewStatus(Storage.ResourcesList, Constants.DTOs.DTOBuildings.Mine.Type);
+            new ResourceInfo().ViewStatus(Storage.ResourcesList, new DTOBuildings().ItemType);
 
             Console.WriteLine("Press 'b' to see your Buildings");
             Console.WriteLine("Press 'c' to create Buildings");
@@ -29,13 +30,13 @@ namespace ConsoleApp1.Pages.ResourceFiles
             switch (key)
             {
                 case "b":
-                    Extension_Methods.ViewStatus(Storage.BuildingsList, Constants.DTOs.DTOBuildings.Mine.Type);
+                    new ResourceInfo().ViewStatus(Storage.BuildingsList, new DTOBuildings().ItemType);
                     SpendResources();
                     break;
 
                 case "c":
                     CreateItem item = new CreateItem();
-                    item.Create(Storage.BuildingsList, DTOBuildings.Mine.Type);
+                    item.Create(Storage.BuildingsList, new DTOBuildings().ItemType);
                     break;
 
                 case "m":
@@ -43,7 +44,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
                     break;
 
                 default:
-                    Extension_Methods.InputUnrecongnisedMessage();
+                    new Extension_Methods().InputUnrecongnisedMessage();
                     SpendResources();
                     break;
             }

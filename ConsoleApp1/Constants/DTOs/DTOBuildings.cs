@@ -9,9 +9,7 @@ namespace ConsoleApp1.Constants.DTOs
 {
     internal class DTOBuildings
     {
-        public static EntityNames Mine = new EntityNames(entityType: "Building")
-        {
-            Name = "Mine"
-        };
+        internal string ItemType = "Building";
+        internal string Mine = "Mine";
     }
 }

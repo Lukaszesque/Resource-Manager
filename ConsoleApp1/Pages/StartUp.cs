@@ -11,7 +11,7 @@ namespace ConsoleApp1.Pages
 {
     internal class StartUp
     {
-        public static void Welcome()
+        public void Welcome()
         {
             //Create an instance of Storage.
 
@@ -24,7 +24,7 @@ namespace ConsoleApp1.Pages
             {
                 case "m":
                 Console.WriteLine("");
-                MenuPage.Menu();
+                new MenuPage().Menu();
                 break;
 
                 default:

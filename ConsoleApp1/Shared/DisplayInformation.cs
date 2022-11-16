@@ -9,7 +9,7 @@ namespace ConsoleApp1.Pages.Shared
 {
     internal class DisplayInformation
     {
-        public static void DisplayResourcesInStorage(List<EntityTypes> entityList)
+        public void DisplayResourcesInStorage(List<EntityTypes> entityList)
         {
             if (entityList.Count > 0)
             {

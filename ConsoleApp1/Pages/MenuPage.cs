@@ -14,7 +14,7 @@ namespace ConsoleApp1.Pages
 {
     internal class MenuPage
     {
-        public static void Menu()
+        public void Menu()
         {
             Console.WriteLine("---------------------------------------------------------");
             Console.WriteLine("You are at the main Menu");
@@ -28,7 +28,7 @@ namespace ConsoleApp1.Pages
             switch (key)
             {
                 case "r":
-                    ResourceStatusPage.ResourceStatus(resourceType: new DTOResources().ItemType);
+                    new ResourceStatusPage().ResourceStatus(resourceType: new DTOResources().ItemType);
                     break;
 
                 case "c":
@@ -40,7 +40,7 @@ namespace ConsoleApp1.Pages
                     break;
 
                 case "u":
-                    SpendResourcesPage.SpendResources();
+                    new SpendResourcesPage().SpendResources();
                     break;
 
                 default:

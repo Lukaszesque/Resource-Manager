@@ -25,7 +25,7 @@ namespace ConsoleApp1.Shared
             }
             else
             {
-                DisplayInformation.DisplayResourcesInStorage(Storage.ResourcesList);
+                new DisplayInformation().DisplayResourcesInStorage(Storage.ResourcesList);
                 Console.WriteLine("Please select which Resource to add to:");
                 Console.WriteLine("");
 
@@ -50,7 +50,7 @@ namespace ConsoleApp1.Shared
                 Console.WriteLine("---------------------------------------------------------");
                 //Console.WriteLine($"The {amount} of {Storage.ResourcesList[key].ItemName} is multiplied by the Modifier value of {Storage.ResourcesList[key].Modifier}. This result in a total increase of {amount * Storage.ResourcesList[key].Modifier}");
                 Console.WriteLine($"You now have {Storage.ResourcesList[key].ItemCounter} of {Storage.ResourcesList[key].ItemName}");
-                MenuPage.Menu();
+                new MenuPage().Menu();
             }
         }
 

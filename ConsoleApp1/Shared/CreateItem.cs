@@ -65,7 +65,7 @@ namespace ConsoleApp1.Pages.Shared
                     break;
             }
 
-            SpendResourcesPage.SpendResources();
+            new SpendResourcesPage().SpendResources();
 
         }
         //TODO: Merge this and building method together
@@ -84,7 +84,7 @@ namespace ConsoleApp1.Pages.Shared
                 Storage.ResourcesList.Add(new EntityTypes(itemType, resourceName));
             }
 
-            MenuPage.Menu();
+            new MenuPage().Menu();
         }
         private void CreateNewBuilding(string buildingName)
         {

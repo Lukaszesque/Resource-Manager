@@ -2,7 +2,7 @@
 using ConsoleApp1.Pages;
 
 //Program
-StartUp.Welcome();
+new StartUp().Welcome();
 
 
     

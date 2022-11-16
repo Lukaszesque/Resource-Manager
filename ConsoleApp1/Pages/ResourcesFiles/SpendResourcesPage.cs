@@ -14,7 +14,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
 {
     internal class SpendResourcesPage
     {
-        public static void SpendResources()
+        public void SpendResources()
         {
             //TODO: Rename the files and classes to be Building related, and review the location on the files
 
@@ -35,12 +35,11 @@ namespace ConsoleApp1.Pages.ResourceFiles
                     break;
 
                 case "c":
-                    CreateItem item = new CreateItem();
-                    item.Create(Storage.BuildingsList, new DTOBuildings().ItemType);
+                    new CreateItem().Create(Storage.BuildingsList, new DTOBuildings().ItemType);
                     break;
 
                 case "m":
-                    MenuPage.Menu();
+                    new MenuPage().Menu();
                     break;
 
                 default:

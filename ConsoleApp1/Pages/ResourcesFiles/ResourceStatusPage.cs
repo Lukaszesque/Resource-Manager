@@ -12,7 +12,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
 {
     internal class ResourceStatusPage
     {
-        public static void ResourceStatus(string resourceType)
+        public void ResourceStatus(string resourceType)
         {
             new ResourceInfo().ViewStatus(Storage.ResourcesList, resourceType);
 
@@ -24,7 +24,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
                 default:
                     Console.WriteLine();
                     Console.WriteLine("Navigating to the Menu.");
-                    MenuPage.Menu();
+                    new MenuPage().Menu();
                     break;
             }
 

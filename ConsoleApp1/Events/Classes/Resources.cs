@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Events.Classes
 {
+    //TODO: #1 Refactor this class
     internal class Resources : IViewStatus
     {
         public string ItemType { get; set; }

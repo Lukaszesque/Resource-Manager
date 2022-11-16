@@ -9,10 +9,12 @@ using ConsoleApp1.Pages.Shared;
 
 namespace ConsoleApp1.Pages
 {
-    internal class WelcomeMessage
+    internal class StartUp
     {
         public static void Welcome()
         {
+            //Create an instance of Storage.
+
             Console.WriteLine("Hello and welcome to the Resource Manager!");
             Console.WriteLine("Press 'm' to navigate to the Main Menu");
 

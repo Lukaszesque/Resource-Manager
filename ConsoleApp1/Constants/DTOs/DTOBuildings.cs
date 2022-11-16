@@ -9,8 +9,7 @@ namespace ConsoleApp1.Constants.DTOs
 {
     internal class DTOBuildings
     {
-        public static Building Mine = new Building("Mine")
-        {
-        };
+        internal string ItemType = "Building";
+        internal string Mine = "Mine";
     }
 }

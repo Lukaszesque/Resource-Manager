@@ -1,7 +1,9 @@
 ﻿using ConsoleApp1.Constants;
+using ConsoleApp1.Constants.DTOs;
 using ConsoleApp1.Events.Classes;
 using ConsoleApp1.Pages.ResourceFiles;
 using ConsoleApp1.Pages.Shared;
+using ConsoleApp1.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,22 +23,20 @@ namespace ConsoleApp1.Pages
             Console.WriteLine("Press 'a' to add to your resources");
             Console.WriteLine("Press 'u' to spend your resources");
 
-            var key = Events.Classes.Resources.storeKey();
+            var key = Resources.storeKey();
 
             switch (key)
             {
                 case "r":
-                    ResourceStatusPage.ResourceStatus();
+                    ResourceStatusPage.ResourceStatus(resourceType: new DTOResources().ItemType);
                     break;
 
                 case "c":
-                    //TODO: Make the declaration of this dry (here and in other invokations)
-                    CreateItem item = new CreateItem();
-                    item.Create(Storage.ResourcesList);
+                    new CreateItem().Create(Storage.ResourcesList, new DTOResources().ItemType);
                     break;
 
                 case "a":
-                    Extension_Methods.GetResources();
+                    new ResourceInfo().GetResources();
                     break;
 
                 case "u":
@@ -44,7 +44,7 @@ namespace ConsoleApp1.Pages
                     break;
 
                 default:
-                    Constants.Extension_Methods.InputUnrecongnisedMessage();
+                    new Extension_Methods().InputUnrecongnisedMessage();
                     Menu();
                     break;
 

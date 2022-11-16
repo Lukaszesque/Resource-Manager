@@ -3,25 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleApp1.Events.Classes;
 
 namespace ConsoleApp1.Constants.DTOs
 {
-    public class DTOResources
-    {
-        public static Materials Wood = new Materials() 
-        {    
-            Name = "Wood"
-        };
-        public static Materials Stone = new Materials()
-        { 
-            Name = "Stone"
-        };
-
-        public static Materials Gold = new Materials() 
-        { 
-            Name = "Gold"
-        };
-        
-
+    internal class DTOResources
+    { 
+        internal string ItemType = "Resource";
+        internal string Wood = "Wood";
+        internal string Stone = "Stone";
+        internal string Gold = "Gold";
     }
 }

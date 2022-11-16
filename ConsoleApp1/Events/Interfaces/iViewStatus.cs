@@ -8,7 +8,8 @@ namespace ConsoleApp1.Events.Interfaces
 {
     interface IViewStatus
     { 
-        string Name { get; set;}
-        float Counter { get; set;}
+        string ItemType { get; set; }
+        string ItemName { get; set;}
+        float ItemCounter { get; set;}
     }
 }

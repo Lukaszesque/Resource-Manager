@@ -14,6 +14,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
     {
         public void ResourceStatus(string resourceType)
         {
+            Console.Clear();
             new ResourceInfo().ViewStatus(Storage.ResourcesList, resourceType);
 
             Console.WriteLine("");

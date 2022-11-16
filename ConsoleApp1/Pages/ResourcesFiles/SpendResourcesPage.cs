@@ -19,6 +19,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
             //TODO: Rename the files and classes to be Building related, and review the location on the files
 
             //Notify user of what resources he has
+            Console.Clear();
             new ResourceInfo().ViewStatus(Storage.ResourcesList, new DTOBuildings().ItemType);
 
             Console.WriteLine("Press 'b' to see your Buildings");

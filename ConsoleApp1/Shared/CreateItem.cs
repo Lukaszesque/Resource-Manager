@@ -17,6 +17,7 @@ namespace ConsoleApp1.Pages.Shared
         public void Create(List<EntityTypes> entityList, string entityType) 
             {
 
+            Console.Clear();
             new ResourceInfo().ViewStatus(entityList, entityType);
             new UserMessages().ChooseFromTheBelow();
 

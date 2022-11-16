@@ -14,8 +14,7 @@ namespace ConsoleApp1.Shared
     {
         public void GetResources()
         {
-            Console.WriteLine("---------------------------------------------------------");
-
+            Console.Clear();
             if (Storage.ResourcesList.Count == 0)
             {
                 Console.WriteLine("You do not have any resources yet.");
@@ -56,9 +55,6 @@ namespace ConsoleApp1.Shared
 
         public void ViewStatus(List<EntityTypes> entityList, string entityType)
         {
-            Console.WriteLine($"");
-            Console.WriteLine($"");
-            Console.WriteLine("---------------------------------------------------------");
             if (entityList.Count == 0){
                 Console.WriteLine("");
                 Console.WriteLine($"You do not have any {entityType}s yet.");

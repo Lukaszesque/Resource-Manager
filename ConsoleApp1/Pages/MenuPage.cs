@@ -16,8 +16,11 @@ namespace ConsoleApp1.Pages
     {
         public void Menu()
         {
+            Console.WriteLine("");
             Console.WriteLine("---------------------------------------------------------");
-            Console.WriteLine("You are at the main Menu");
+            Console.WriteLine("");
+            Console.WriteLine("You are at the main Menu. Please select from the below:");
+            Console.WriteLine("");
             Console.WriteLine("Press 'r' to see the status of your resources");
             Console.WriteLine("Press 'c' to create your resources");
             Console.WriteLine("Press 'a' to add to your resources");

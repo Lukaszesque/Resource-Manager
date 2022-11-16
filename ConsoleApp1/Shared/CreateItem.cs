@@ -16,11 +16,14 @@ namespace ConsoleApp1.Pages.Shared
     {
         public void Create(List<EntityTypes> entityList, string entityType) 
             {
+
             new ResourceInfo().ViewStatus(entityList, entityType);
+            new UserMessages().ChooseFromTheBelow();
 
             switch (entityType) { 
                 case "Building":
 
+                    Console.WriteLine("");
                     Console.WriteLine($"Press 'm' to build a {new DTOBuildings().Mine}");
                     string key = new Extension_Methods().storeKey();
                     switch (key)
@@ -39,6 +42,7 @@ namespace ConsoleApp1.Pages.Shared
                     break;
 
                 case "Resource":
+                    Console.WriteLine("");
                     Console.WriteLine($"Press 'w' to build {new DTOResources().Wood}");
                     Console.WriteLine($"Press 's' to build {new DTOResources().Stone}");
                     Console.WriteLine($"Press 'g' to build {new DTOResources().Gold}");

@@ -20,8 +20,8 @@ namespace ConsoleApp1.Shared
             {
                 Console.WriteLine("You do not have any resources yet.");
 
-                CreateItem item = new CreateItem();
-                item.Create(Storage.ResourcesList, new DTOResources().Wood);
+                
+                new CreateItem().Create(Storage.ResourcesList, new DTOResources().Wood);
             }
             else
             {
@@ -57,9 +57,12 @@ namespace ConsoleApp1.Shared
         public void ViewStatus(List<EntityTypes> entityList, string entityType)
         {
             Console.WriteLine($"");
+            Console.WriteLine($"");
             Console.WriteLine("---------------------------------------------------------");
-            if (entityList.Count == 0)
-            { Console.WriteLine($"You do not have any {entityType}s yet"); }
+            if (entityList.Count == 0){
+                Console.WriteLine("");
+                Console.WriteLine($"You do not have any {entityType}s yet.");
+            }
             else
             {
                 Console.WriteLine($"You currently have {entityList.Count} type of {entityType} in your collection");

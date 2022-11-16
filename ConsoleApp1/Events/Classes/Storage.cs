@@ -12,6 +12,5 @@ namespace ConsoleApp1.Events.Classes
         public static List<EntityTypes> ResourcesList = new List<EntityTypes>();    
         public static List<EntityTypes> BuildingsList = new List<EntityTypes>();
 
-
     }
 }

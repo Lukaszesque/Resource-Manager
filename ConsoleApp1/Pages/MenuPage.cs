@@ -37,7 +37,7 @@ namespace ConsoleApp1.Pages
                     break;
 
                 case "a":
-                    new ResourceInfo().GetResources();
+                    new ItemInfo().GetResources();
                     break;
 
                 case "u":

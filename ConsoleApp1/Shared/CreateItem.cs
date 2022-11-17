@@ -18,7 +18,7 @@ namespace ConsoleApp1.Pages.Shared
             {
 
             Console.Clear();
-            new ResourceInfo().ViewStatus(entityList, entityType);
+            new ItemInfo().ViewStatus(entityList, entityType);
             new UserMessages().ChooseFromTheBelow();
 
             switch (entityType) { 

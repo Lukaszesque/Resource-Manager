@@ -20,7 +20,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
 
             //Notify user of what resources he has
             Console.Clear();
-            new ResourceInfo().ViewStatus(Storage.ResourcesList, new DTOBuildings().ItemType);
+            new ItemInfo().ViewStatus(Storage.ResourcesList, new DTOBuildings().ItemType);
 
             Console.WriteLine("Press 'b' to see your Buildings");
             Console.WriteLine("Press 'c' to create Buildings");
@@ -31,7 +31,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
             switch (key)
             {
                 case "b":
-                    new ResourceInfo().ViewStatus(Storage.BuildingsList, new DTOBuildings().ItemType);
+                    new ItemInfo().ViewStatus(Storage.BuildingsList, new DTOBuildings().ItemType);
                     SpendResources();
                     break;
 

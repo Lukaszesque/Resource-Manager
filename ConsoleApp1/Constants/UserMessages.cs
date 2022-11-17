@@ -17,7 +17,7 @@ namespace ConsoleApp1.Constants
         internal void PressAnyKeyToNavigateToMenu()
         {
             Console.WriteLine("");
-            Console.WriteLine($"Press any key to navigate back to the menu.");
+            Console.WriteLine($"Press any key to navigate to the Main Menu.");
             string key = new Extension_Methods().storeKey();
 
             switch (key)

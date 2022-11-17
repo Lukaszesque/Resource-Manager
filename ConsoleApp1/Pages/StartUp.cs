@@ -14,25 +14,8 @@ namespace ConsoleApp1.Pages
     {
         public void Welcome()
         {
-            //Create an instance of Storage.
-
             Console.WriteLine("Hello and welcome to the Resource Manager!");
-            Console.WriteLine("Press 'm' to navigate to the Main Menu");
-
-            string key = new Extension_Methods().storeKey();
-
-            switch (key)
-            {
-                case "m":
-                Console.WriteLine("");
-                new MenuPage().Menu();
-                break;
-
-                default:
-                Console.WriteLine("Input not recognised...");
-                Welcome();
-                break;
-            }
+            new UserMessages().PressAnyKeyToNavigateToMenu();   
         }
     }
 }

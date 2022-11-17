@@ -18,8 +18,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
             new ResourceInfo().ViewStatus(Storage.ResourcesList, resourceType);
 
             Console.WriteLine("");
-            Console.WriteLine("---------------------------------------------------------");
-            Console.WriteLine($"Press any key to navigate back to the menu");
+            Console.WriteLine($"Press any key to navigate back to the menu.");
             string key = new Extension_Methods().storeKey();
 
             switch (key)

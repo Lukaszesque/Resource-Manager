@@ -51,15 +51,15 @@ namespace ConsoleApp1.Pages.Shared
                     switch (key)
                     {
                         case "w":
-                            CreateNewResource(new DTOResources().Wood);
+                            CreateEntity(new DTOResources().ItemType, new DTOResources().Wood, Storage.ResourcesList);
                             break;
 
                         case "s":
-                            CreateNewResource(new DTOResources().Stone);
+                            CreateEntity(new DTOResources().ItemType, new DTOResources().Stone, Storage.ResourcesList);
                             break;
 
                         case "g":
-                            CreateNewResource(new DTOResources().Gold);
+                            CreateEntity(new DTOResources().ItemType, new DTOResources().Gold, Storage.ResourcesList);
                             break;
 
                         default:
@@ -70,28 +70,25 @@ namespace ConsoleApp1.Pages.Shared
                     }
                     break;
             }
-
-            new SpendResourcesPage().SpendResources();
-
         }
-        //TODO: Merge this and building method together
-        private void CreateNewResource(string resourceName)
-        {
-            string itemType = "Resource";
-            //Creates an instance of a resource, but only if one does not already exist
 
-            if (Storage.ResourcesList.Any(item => item.ItemName == resourceName))
-            {
-                Console.WriteLine("");
-                Console.WriteLine($"You already have {resourceName}.");
-            }
-            else
-            {
-                Storage.ResourcesList.Add(new EntityTypes(itemType, resourceName));
+        private void CreateEntity(string entityType, string entityName, List<EntityTypes> entityList) 
+            { 
+                if (entityList.Any(item => item.ItemName == entityName)) 
+                {
+                    Console.Clear();
+                    Console.WriteLine($"You already have {entityName}.");
+                    new UserMessages().PressAnyKeyToNavigateToMenu();
+                }
+                else 
+                { 
+                    entityList.Add(new EntityTypes(entityType, entityName));
+                    Console.Clear();
+                    new ResourceStatusPage().ResourceStatus(resourceType: new DTOResources().ItemType);
+                }
             }
 
-            new MenuPage().Menu();
-        }
+        //TODO: Replace this code with the CreateEntity() method above
         private void CreateNewBuilding(string buildingName)
         {
             //retreive the building from the list. If none is obtained then the variable  will be Null

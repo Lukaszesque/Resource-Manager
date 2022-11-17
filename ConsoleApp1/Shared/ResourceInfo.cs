@@ -56,7 +56,6 @@ namespace ConsoleApp1.Shared
         public void ViewStatus(List<EntityTypes> entityList, string entityType)
         {
             if (entityList.Count == 0){
-                Console.WriteLine("");
                 Console.WriteLine($"You do not have any {entityType}s yet.");
             }
             else
@@ -67,6 +66,7 @@ namespace ConsoleApp1.Shared
 
             foreach (var item in entityList)
             {
+                Console.WriteLine("");
                 Console.WriteLine($"Resource: " + item.ItemName);
                 Console.WriteLine($"Level: " + item.ItemLevel);
                 Console.Write($"Amount: {item.ItemCounter}");

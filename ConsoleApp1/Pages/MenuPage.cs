@@ -22,7 +22,7 @@ namespace ConsoleApp1.Pages
             Console.WriteLine("Press 'r' to see the status of your resources");
             Console.WriteLine("Press 'c' to create your resources");
             Console.WriteLine("Press 'a' to add to your resources");
-            Console.WriteLine("Press 'u' to spend your resources");
+            Console.WriteLine("Press 'b' to see the Buildings menu");
 
             var key = new Extension_Methods().storeKey();
 
@@ -40,8 +40,8 @@ namespace ConsoleApp1.Pages
                     new ItemInfo().GetResources();
                     break;
 
-                case "u":
-                    new SpendResourcesPage().SpendResources();
+                case "b":
+                    new BuildingMenu().MenuPage();
                     break;
 
                 default:

@@ -12,19 +12,19 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Pages.ResourceFiles
 {
-    internal class SpendResourcesPage
+
+    internal class BuildingMenu
     {
-        public void SpendResources()
+        public void MenuPage()
         {
-            //TODO: Rename the files and classes to be Building related, and review the location on the files
 
             //Notify user of what resources he has
             Console.Clear();
-            new ItemInfo().ViewStatus(Storage.ResourcesList, new DTOBuildings().ItemType);
-
+            Console.WriteLine("You are at the Buildings Menu.");
+            Console.WriteLine("");
             Console.WriteLine("Press 'b' to see your Buildings");
             Console.WriteLine("Press 'c' to create Buildings");
-            Console.WriteLine("Press 'm' to navigate back to the Menu");
+            Console.WriteLine("Press 'm' to navigate back to the Main Menu");
 
             var key = new Extension_Methods().storeKey();
 
@@ -32,7 +32,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
             {
                 case "b":
                     new ItemInfo().ViewStatus(Storage.BuildingsList, new DTOBuildings().ItemType);
-                    SpendResources();
+                    new UserMessages().PressAnyKeyToNavigateToMenu();
                     break;
 
                 case "c":
@@ -45,7 +45,7 @@ namespace ConsoleApp1.Pages.ResourceFiles
 
                 default:
                     new Extension_Methods().InputUnrecongnisedMessage();
-                    SpendResources();
+                    MenuPage();
                     break;
             }
 

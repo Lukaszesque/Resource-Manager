@@ -19,7 +19,6 @@ namespace ConsoleApp1.Pages.Shared
 
             Console.Clear();
             new ItemInfo().ViewStatus(entityList, entityType);
-            new UserMessages().ChooseFromTheBelow();
 
             switch (entityType) { 
                 case "Building":
@@ -32,6 +31,7 @@ namespace ConsoleApp1.Pages.Shared
                         case "m":
 
                             CreateNewBuilding(new DTOBuildings().Mine);
+                            new UserMessages().PressAnyKeyToNavigateToMenu();
                             break;
 
                         default:
@@ -44,9 +44,28 @@ namespace ConsoleApp1.Pages.Shared
 
                 case "Resource":
                     Console.WriteLine("");
-                    Console.WriteLine($"Press 'w' to build {new DTOResources().Wood}");
-                    Console.WriteLine($"Press 's' to build {new DTOResources().Stone}");
-                    Console.WriteLine($"Press 'g' to build {new DTOResources().Gold}");
+                    if (!entityList.Any(item => item.ItemName == new DTOResources().Wood)) 
+                        { 
+                        Console.WriteLine($"Press 'w' to build {new DTOResources().Wood}");
+                    }
+                    
+                    if (!entityList.Any(item => item.ItemName == new DTOResources().Stone)) 
+                        { 
+                        Console.WriteLine($"Press 's' to build {new DTOResources().Stone}");
+                    }
+                    
+                    if (!entityList.Any(item => item.ItemName == new DTOResources().Gold))
+                    { 
+                        Console.WriteLine($"Press 'g' to build {new DTOResources().Gold}");
+                    }
+
+                    if (entityList.Count == 3)
+                    {
+                        Console.WriteLine("You have created all the resources possible");
+                        new UserMessages().PressAnyKeyToNavigateToMenu();
+                    }
+
+
                     key = new Extension_Methods().storeKey();
                     switch (key)
                     {

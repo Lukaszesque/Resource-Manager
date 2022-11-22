@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ConsoleApp1.Constants;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ConsoleApp1.Shared
 {
@@ -56,53 +57,41 @@ namespace ConsoleApp1.Shared
 
             switch (key)
             { 
-                //TODO #2: This needs to be dryer and debugged
+                //TODO #2: Add this for Stone and Gold
                 case "w":
-                float addedAmount = 100;
-                if (Storage.BuildingsList[0].ItemLevel > 0) {addedAmount *= Storage.BuildingsList[0].ItemLevel;}
-                    Storage.ResourcesList[0].ItemCounter += addedAmount;
-                Console.WriteLine($"{addedAmount} added to wood. you now have {Storage.ResourcesList[0].ItemCounter} wood.");
+                GetResource(new DTOResources().Wood);               
                 break;
             }
 
+        }
 
+        //TODO #1: Rename this method. Implement parameter for key input. Make it work for other Resources
+        private void GetResource(string resourceName)
+        {
+            var objectRef = Storage.ResourcesList.FirstOrDefault(i => i.ItemName == resourceName);
+            float addedAmount = 100;
 
-            //if (Storage.ResourcesList.Count == 0)
-            //{
-            //    Console.WriteLine("You do not have any resources yet.");
+            if (objectRef?.ItemLevel > 0) addedAmount *= objectRef.ItemLevel;
+            if (objectRef != null) objectRef.ItemCounter += addedAmount;
+            Console.Clear();
+            Console.WriteLine($"{addedAmount} added to {resourceName}. You now have {objectRef?.ItemCounter} {resourceName}.");
 
-            //    new CreateItem().Create(Storage.ResourcesList, new DTOResources().Wood);
-            //}
-            //else
-            //{
-            //    new ItemInfo().ViewStatus(Storage.ResourcesList, new DTOResources().ItemType);
-            //    Console.WriteLine("");
-            //    Console.WriteLine("Please select which Resource to add to:");
-            //    Console.WriteLine("");
+            //The player can add more wood or navigate back to the menu
+            Console.WriteLine("Press 'w' to continue adding Wood");
+            Console.WriteLine("Press any other key to navigate back to the Menu");
+            string key2 = new Extension_Methods().storeKey();
 
-            //    for (int i = 0; i < Storage.ResourcesList.Count; i++)
-            //    {
-            //        Console.WriteLine($"Press {i} to add to {Storage.ResourcesList[i].ItemName}"
+            switch (key2)
+            {
+                case "w":
+                    GetResource(new DTOResources().Wood);
+                    break;
 
-            //            );
+                default:
+                    new MenuPage().Menu();
+                    break;
+            }
 
-            //        if (i > 9)
-            //        {
-            //            Console.WriteLine("Too many Resources are created. Please delete some resources.");
-            //        }
-            //    }
-
-            //    int key = Convert.ToInt32(Console.ReadLine());
-
-            //    Console.WriteLine("---------------------------------------------------------");
-            //    Console.WriteLine("Please select how much resources to add");
-            //    float amount = Convert.ToSingle(Console.ReadLine());
-
-            //    Storage.ResourcesList[key].ItemCounter += amount;
-            //    Console.WriteLine("---------------------------------------------------------");
-            //    Console.WriteLine($"You now have {Storage.ResourcesList[key].ItemCounter} of {Storage.ResourcesList[key].ItemName}");
-            //    new UserMessages().PressAnyKeyToNavigateToMenu();
-            //}
         }
     }
 }

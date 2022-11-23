@@ -37,7 +37,13 @@ namespace ConsoleApp1.Pages
                     break;
 
                 case "a":
-                    new ItemInfo().GetResources();
+                    if (Storage.ResourcesList.Count > 0) new ItemInfo().GetResources();
+                    else 
+                    {
+                        Console.Clear();
+                        Console.WriteLine("You need to create resources before adding to their quantity.");
+                        new UserMessages().PressAnyKeyToNavigateToMenu();
+                    }
                     break;
 
                 case "b":

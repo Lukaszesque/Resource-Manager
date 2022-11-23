@@ -1,14 +1,7 @@
-﻿using ConsoleApp1.Constants.DTOs;
+﻿using ConsoleApp1.Constants;
+using ConsoleApp1.Constants.DTOs;
 using ConsoleApp1.Events.Classes;
-using ConsoleApp1.Pages.Shared;
 using ConsoleApp1.Pages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ConsoleApp1.Constants;
-using System.Security.Cryptography.X509Certificates;
 
 namespace ConsoleApp1.Shared
 {
@@ -37,14 +30,13 @@ namespace ConsoleApp1.Shared
         }
         internal void GetResources()
         {
-            //TODO #1: The resource should be modified by the Building level.
-            //TODO #1a: Implement logic that prevents the user from adding resources if none exist
+            //TODO: The resource should be modified by the Building level.
             Console.Clear();
 
-            if (Storage.ResourcesList.Any(item => item.ItemName == new DTOResources().Wood)) 
-                { 
-                    Console.WriteLine("Press 'w' to add more Wood");
-                }
+            if (Storage.ResourcesList.Any(item => item.ItemName == new DTOResources().Wood))
+            {
+                Console.WriteLine("Press 'w' to add more Wood");
+            }
             if (Storage.ResourcesList.Any(item => item.ItemName == new DTOResources().Stone))
             {
                 Console.WriteLine("Press 's' to add more Stone");
@@ -57,30 +49,25 @@ namespace ConsoleApp1.Shared
             string key = new Extension_Methods().storeKey();
 
             switch (key)
-            { 
+            {
                 case KeyInputs.WoodKey:
-                GetResource(new DTOResources().Wood, KeyInputs.WoodKey);               
-                break;
+                    AddToItemCounter(new DTOResources().Wood, KeyInputs.WoodKey);
+                    break;
 
                 case KeyInputs.StoneKey:
-                    GetResource(new DTOResources().Gold, KeyInputs.StoneKey);
+                    AddToItemCounter(new DTOResources().Stone, KeyInputs.StoneKey);
                     break;
 
                 case KeyInputs.GoldKey:
-                    GetResource(new DTOResources().Gold, KeyInputs.GoldKey);
+                    AddToItemCounter(new DTOResources().Gold, KeyInputs.GoldKey);
                     break;
             }
 
         }
 
-        //TODO #1: Rename this method. Implement parameter for key input. Make it work for other Resources
-        private void GetResource(string resourceName, string keyInput)
+        private void AddToItemCounter(string resourceName, string keyInput)
         {
             var objectRef = Storage.ResourcesList.FirstOrDefault(i => i.ItemName == resourceName);
-            if (objectRef == null) { 
-                Console.WriteLine("There is a problem - could not find the resource in the Storage...");
-                new UserMessages().PressAnyKeyToNavigateToMenu();
-                }
             float addedAmount = 100;
 
             if (objectRef?.ItemLevel > 0) addedAmount *= objectRef.ItemLevel;
@@ -93,10 +80,12 @@ namespace ConsoleApp1.Shared
             Console.WriteLine("Press any other key to navigate back to the Menu");
             string key2 = new Extension_Methods().storeKey();
 
-            if (key2 == keyInput) {
-                GetResource(resourceName, keyInput);
+            if (key2 == keyInput)
+            {
+                AddToItemCounter(resourceName, keyInput);
             }
-            else {
+            else
+            {
                 new MenuPage().Menu();
             }
         }

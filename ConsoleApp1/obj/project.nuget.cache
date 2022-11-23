@@ -1,8 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "hra3qIv6hEn+N7MWqJc1dsUqHZsMtiKAF/KrWqYZtAnpvBVPjAcIzbdfndxr22JfliJh64Xrxo4RcMBkpxKL5A==",
+  "dgSpecHash": "1ZclsQjySLuc1ZWh5bXhQbpazzoV2TUKVwTQbL1eagdaZgwph3iN0aF7W5yN70ePzhIXLq+s0nNeC77PCB233Q==",
   "success": true,
   "projectFilePath": "C:\\Projects\\Tutorial Projects\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\Lukasz\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.11\\microsoft.netcore.app.host.win-x64.6.0.11.nupkg.sha512",
+    "C:\\Users\\Lukasz\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.11\\microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\Lukasz\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.11\\microsoft.windowsdesktop.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\Lukasz\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.11\\microsoft.netcore.app.ref.6.0.11.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://nuget.geeksms.uat.co/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
 }

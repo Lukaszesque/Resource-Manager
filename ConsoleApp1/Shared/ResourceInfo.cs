@@ -37,8 +37,8 @@ namespace ConsoleApp1.Shared
         }
         internal void GetResources()
         {
-            //#1: Refactor this so that user presses a button to generate a resource. The resource is modified by the Building level.
-            //#1a: Implement logic that prevents the user from adding resources if none exist
+            //TODO #1: The resource should be modified by the Building level.
+            //TODO #1a: Implement logic that prevents the user from adding resources if none exist
             Console.Clear();
 
             if (Storage.ResourcesList.Any(item => item.ItemName == new DTOResources().Wood)) 

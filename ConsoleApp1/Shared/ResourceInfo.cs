@@ -38,6 +38,7 @@ namespace ConsoleApp1.Shared
         internal void GetResources()
         {
             //#1: Refactor this so that user presses a button to generate a resource. The resource is modified by the Building level.
+            //#1a: Implement logic that prevents the user from adding resources if none exist
             Console.Clear();
 
             if (Storage.ResourcesList.Any(item => item.ItemName == new DTOResources().Wood)) 
@@ -57,18 +58,29 @@ namespace ConsoleApp1.Shared
 
             switch (key)
             { 
-                //TODO #2: Add this for Stone and Gold
-                case "w":
-                GetResource(new DTOResources().Wood);               
+                case KeyInputs.WoodKey:
+                GetResource(new DTOResources().Wood, KeyInputs.WoodKey);               
                 break;
+
+                case KeyInputs.StoneKey:
+                    GetResource(new DTOResources().Gold, KeyInputs.StoneKey);
+                    break;
+
+                case KeyInputs.GoldKey:
+                    GetResource(new DTOResources().Gold, KeyInputs.GoldKey);
+                    break;
             }
 
         }
 
         //TODO #1: Rename this method. Implement parameter for key input. Make it work for other Resources
-        private void GetResource(string resourceName)
+        private void GetResource(string resourceName, string keyInput)
         {
             var objectRef = Storage.ResourcesList.FirstOrDefault(i => i.ItemName == resourceName);
+            if (objectRef == null) { 
+                Console.WriteLine("There is a problem - could not find the resource in the Storage...");
+                new UserMessages().PressAnyKeyToNavigateToMenu();
+                }
             float addedAmount = 100;
 
             if (objectRef?.ItemLevel > 0) addedAmount *= objectRef.ItemLevel;
@@ -76,22 +88,17 @@ namespace ConsoleApp1.Shared
             Console.Clear();
             Console.WriteLine($"{addedAmount} added to {resourceName}. You now have {objectRef?.ItemCounter} {resourceName}.");
 
-            //The player can add more wood or navigate back to the menu
-            Console.WriteLine("Press 'w' to continue adding Wood");
+            //The player can add more resources or navigate back to the menu
+            Console.WriteLine($"Press '{keyInput}' to continue adding {resourceName}");
             Console.WriteLine("Press any other key to navigate back to the Menu");
             string key2 = new Extension_Methods().storeKey();
 
-            switch (key2)
-            {
-                case "w":
-                    GetResource(new DTOResources().Wood);
-                    break;
-
-                default:
-                    new MenuPage().Menu();
-                    break;
+            if (key2 == keyInput) {
+                GetResource(resourceName, keyInput);
             }
-
+            else {
+                new MenuPage().Menu();
+            }
         }
     }
 }

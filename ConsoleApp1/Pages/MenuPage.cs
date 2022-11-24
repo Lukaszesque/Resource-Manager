@@ -57,6 +57,5 @@ namespace ConsoleApp1.Pages
 
             }
         }
-
     }
 }

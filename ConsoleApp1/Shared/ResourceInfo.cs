@@ -70,6 +70,12 @@ namespace ConsoleApp1.Shared
             var objectRef = Storage.ResourcesList.FirstOrDefault(i => i.ItemName == resourceName);
             float addedAmount = 100;
 
+            //TODO: # 1 Implement leveling up of the Mine so that this can be tested
+            if (resourceName == new DTOResources().Stone && Storage.BuildingsList.Any(x => x.ItemName == "Stone")) 
+                {  
+                    addedAmount = BuildingMultiplier(addedAmount, Storage.BuildingsList.FirstOrDefault(i => i.ItemName == "Stone").ItemLevel);
+                } 
+
             if (objectRef?.ItemLevel > 0) addedAmount *= objectRef.ItemLevel;
             if (objectRef != null) objectRef.ItemCounter += addedAmount;
             Console.Clear();
@@ -89,5 +95,11 @@ namespace ConsoleApp1.Shared
                 new MenuPage().Menu();
             }
         }
+
+        private float BuildingMultiplier(double valueToMultiply, int buildingLevel) 
+            {   
+            //Buildings increase the output by value = value^(buildingLevel / 10)
+                return (float)Math.Pow(valueToMultiply, Convert.ToDouble(buildingLevel) / 10);
+            }
     }
 }

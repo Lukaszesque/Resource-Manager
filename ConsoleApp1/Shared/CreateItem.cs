@@ -23,12 +23,15 @@ namespace ConsoleApp1.Pages.Shared
                     switch (key)
                     {
                         case "m":
-                            // TODO #1: Test how correct the validation is
                             if (MineValidation(Storage.ResourcesList))
                             {
                                 CreateEntity(new DTOBuildings().ItemType, new DTOBuildings().Mine, Storage.BuildingsList);
                             }
-                            else { Console.WriteLine("The validation criteria are not met yet."); }
+                            else 
+                            { 
+                                Console.Clear();   
+                                Console.WriteLine("The validation criteria are not met yet."); 
+                            }
 
                             new UserMessages().PressAnyKeyToNavigateToMenu();
                             break;
@@ -113,7 +116,8 @@ namespace ConsoleApp1.Pages.Shared
             {
                 entityList.Add(new EntityTypes(entityType, entityName));
                 Console.Clear();
-                new ResourceStatusPage().ResourceStatus(resourceType: new DTOResources().ItemType);
+                Console.WriteLine($"{entityName} has been created!");
+                new UserMessages().PressAnyKeyToNavigateToMenu();
             }
         }
     }
